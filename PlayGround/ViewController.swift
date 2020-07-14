@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         return [BasicEntity(title: "问卷调查", vcName: "QuestionnaireController"), BasicEntity(title: "终期评估模拟", vcName: "FinalEvaluationViewController"), BasicEntity(title: "终期评估考核", vcName: "EvaluationResultViewController"), BasicEntity(title: "禁止登陆", vcName: "DenyLoginViewController"), BasicEntity(title: "医生已离开", vcName: "DoctorLeftViewController"), BasicEntity(title: "PlayGround", vcName: "PlayGroundViewController")]
     }()
 
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,13 +40,11 @@ class ViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    
-    private func setupUI() {
-        view.backgroundColor = .white
-        view.addSubview(tableView)
-        tableView.frame = view.frame
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
     }
     
+    // MARK: Lazy Get
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.delegate = self
@@ -55,6 +54,17 @@ class ViewController: UIViewController {
     
 }
 
+// MARK: - UI
+extension ViewController {
+    
+    private func setupUI() {
+        view.backgroundColor = .white
+        view.addSubview(tableView)
+        tableView.frame = view.frame
+    }
+}
+
+// MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -73,6 +83,7 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
