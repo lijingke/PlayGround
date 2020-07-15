@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5459EA6F24BF023200A1D0FE /* CustomScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459EA6E24BF023200A1D0FE /* CustomScrollViewController.swift */; };
+		5459EA7124BF025100A1D0FE /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459EA7024BF025100A1D0FE /* CustomScrollView.swift */; };
 		54BF0DAF24BD8CE400629874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0DAE24BD8CE400629874 /* AppDelegate.swift */; };
 		54BF0DB324BD8CE400629874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0DB224BD8CE400629874 /* ViewController.swift */; };
 		54BF0DB824BD8CE700629874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54BF0DB724BD8CE700629874 /* Assets.xcassets */; };
@@ -56,7 +58,6 @@
 		54BF0E4424BD8DFC00629874 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1924BD8DFC00629874 /* QuestionnaireView.swift */; };
 		54BF0E4524BD8DFC00629874 /* QuestionnaireHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1A24BD8DFC00629874 /* QuestionnaireHeadView.swift */; };
 		54BF0E4624BD8DFC00629874 /* QuestionnaireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1B24BD8DFC00629874 /* QuestionnaireTableViewCell.swift */; };
-		54BF0E4824BD8E2300629874 /* PlayGroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E4724BD8E2300629874 /* PlayGroundViewController.swift */; };
 		5DF1B401C153ABA806FBAA90 /* Pods_PlayGroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CA5A83AEC9657FA2534EC /* Pods_PlayGroundTests.framework */; };
 		655777B836A78B42F9C54F3A /* Pods_PlayGround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC41275CC98A35466AD5FB50 /* Pods_PlayGround.framework */; };
 		6BC5DDF30904EBAD23C1ECC0 /* Pods_PlayGroundUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147B9B5DD5C87783BDACA28 /* Pods_PlayGroundUITests.framework */; };
@@ -84,6 +85,8 @@
 		17F0470E62A43D75D4F0EE2E /* Pods-PlayGroundUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundUITests.release.xcconfig"; path = "Target Support Files/Pods-PlayGroundUITests/Pods-PlayGroundUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C313A6EB3FDD4647CED642A /* Pods-PlayGround-PlayGroundUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-PlayGroundUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround-PlayGroundUITests/Pods-PlayGround-PlayGroundUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D9CA5A83AEC9657FA2534EC /* Pods_PlayGroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayGroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5459EA6E24BF023200A1D0FE /* CustomScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollViewController.swift; sourceTree = "<group>"; };
+		5459EA7024BF025100A1D0FE /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		54BF0DAB24BD8CE400629874 /* PlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54BF0DAE24BD8CE400629874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54BF0DB224BD8CE400629874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +142,6 @@
 		54BF0E1924BD8DFC00629874 /* QuestionnaireView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		54BF0E1A24BD8DFC00629874 /* QuestionnaireHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireHeadView.swift; sourceTree = "<group>"; };
 		54BF0E1B24BD8DFC00629874 /* QuestionnaireTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireTableViewCell.swift; sourceTree = "<group>"; };
-		54BF0E4724BD8E2300629874 /* PlayGroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayGroundViewController.swift; sourceTree = "<group>"; };
 		9038EA275955FC193E64DDD7 /* Pods-PlayGroundUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGroundUITests/Pods-PlayGroundUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92DF5226BD0A7BC4A0E5D6CF /* Pods-PlayGroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGroundTests/Pods-PlayGroundTests.debug.xcconfig"; sourceTree = "<group>"; };
 		94A467FB20D589FDC5B39A0E /* Pods-PlayGround-PlayGroundUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-PlayGroundUITests.release.xcconfig"; path = "Target Support Files/Pods-PlayGround-PlayGroundUITests/Pods-PlayGround-PlayGroundUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,7 +191,6 @@
 				9038EA275955FC193E64DDD7 /* Pods-PlayGroundUITests.debug.xcconfig */,
 				17F0470E62A43D75D4F0EE2E /* Pods-PlayGroundUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -201,6 +202,15 @@
 				F147B9B5DD5C87783BDACA28 /* Pods_PlayGroundUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5459EA7224BF028D00A1D0FE /* CustomScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				5459EA6E24BF023200A1D0FE /* CustomScrollViewController.swift */,
+				5459EA7024BF025100A1D0FE /* CustomScrollView.swift */,
+			);
+			path = CustomScrollView;
 			sourceTree = "<group>";
 		};
 		54BF0DA224BD8CE400629874 = {
@@ -230,12 +240,12 @@
 			children = (
 				54BF0DAE24BD8CE400629874 /* AppDelegate.swift */,
 				54BF0DB224BD8CE400629874 /* ViewController.swift */,
-				54BF0E4724BD8E2300629874 /* PlayGroundViewController.swift */,
 				54BF0DF424BD8DFB00629874 /* DenyLogin */,
 				54BF0DF924BD8DFB00629874 /* DoctorLeft */,
 				54BF0DE024BD8DFB00629874 /* Evaluation */,
-				54BF0E0424BD8DFB00629874 /* Extension */,
 				54BF0E1224BD8DFC00629874 /* Questionnaire */,
+				5459EA7224BF028D00A1D0FE /* CustomScrollView */,
+				54BF0E0424BD8DFB00629874 /* Extension */,
 				54BF0E0E24BD8DFB00629874 /* Tools */,
 				54BF0DDE24BD8D3300629874 /* Launch Screen.storyboard */,
 				54BF0DB724BD8CE700629874 /* Assets.xcassets */,
@@ -657,6 +667,7 @@
 			files = (
 				54BF0E3A24BD8DFC00629874 /* UIView+Extension.swift in Sources */,
 				54BF0E3F24BD8DFC00629874 /* Const.swift in Sources */,
+				5459EA6F24BF023200A1D0FE /* CustomScrollViewController.swift in Sources */,
 				54BF0E1C24BD8DFC00629874 /* FinalEvaluationInterface.swift in Sources */,
 				54BF0E2A24BD8DFC00629874 /* FinalEvaluationQuesCell.swift in Sources */,
 				54BF0E2924BD8DFC00629874 /* FinalEvaluationView.swift in Sources */,
@@ -680,7 +691,6 @@
 				54BF0E3724BD8DFC00629874 /* Int+Extension.swift in Sources */,
 				54BF0E4624BD8DFC00629874 /* QuestionnaireTableViewCell.swift in Sources */,
 				54BF0E2824BD8DFC00629874 /* FinalEvaluationHeaderView.swift in Sources */,
-				54BF0E4824BD8E2300629874 /* PlayGroundViewController.swift in Sources */,
 				54BF0E4424BD8DFC00629874 /* QuestionnaireView.swift in Sources */,
 				54BF0DB324BD8CE400629874 /* ViewController.swift in Sources */,
 				54BF0E3E24BD8DFC00629874 /* CountDownTimer.swift in Sources */,
@@ -692,6 +702,7 @@
 				54BF0E1E24BD8DFC00629874 /* FinalEvaluationViewController.swift in Sources */,
 				54BF0E3024BD8DFC00629874 /* DoctorInfoTableFooterView.swift in Sources */,
 				54BF0E4524BD8DFC00629874 /* QuestionnaireHeadView.swift in Sources */,
+				5459EA7124BF025100A1D0FE /* CustomScrollView.swift in Sources */,
 				54BF0E4024BD8DFC00629874 /* HXSTimer.swift in Sources */,
 				54BF0E3224BD8DFC00629874 /* DoctorInfoTableViewCell.swift in Sources */,
 				54BF0E2524BD8DFC00629874 /* FinalEvaluationTableHeader.swift in Sources */,
