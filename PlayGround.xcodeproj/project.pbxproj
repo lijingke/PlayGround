@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		545456FF24C04B8600F44769 /* MyPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545456FE24C04B8600F44769 /* MyPointsViewController.swift */; };
+		5454570124C04BAA00F44769 /* MyPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454570024C04BAA00F44769 /* MyPointsView.swift */; };
+		5454570324C04BFB00F44769 /* PointRewardInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454570224C04BFB00F44769 /* PointRewardInfoTableCell.swift */; };
+		5454570924C0532E00F44769 /* MyPointsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454570824C0532E00F44769 /* MyPointsHeaderView.swift */; };
+		5454570B24C0544900F44769 /* UITableViewHeaderFooterView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454570A24C0544900F44769 /* UITableViewHeaderFooterView+Extension.swift */; };
 		5459EA6F24BF023200A1D0FE /* CustomScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459EA6E24BF023200A1D0FE /* CustomScrollViewController.swift */; };
 		5459EA7124BF025100A1D0FE /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459EA7024BF025100A1D0FE /* CustomScrollView.swift */; };
 		54BF0DAF24BD8CE400629874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0DAE24BD8CE400629874 /* AppDelegate.swift */; };
@@ -58,6 +63,9 @@
 		54BF0E4424BD8DFC00629874 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1924BD8DFC00629874 /* QuestionnaireView.swift */; };
 		54BF0E4524BD8DFC00629874 /* QuestionnaireHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1A24BD8DFC00629874 /* QuestionnaireHeadView.swift */; };
 		54BF0E4624BD8DFC00629874 /* QuestionnaireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1B24BD8DFC00629874 /* QuestionnaireTableViewCell.swift */; };
+		54C97E0224C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C97DFD24C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.m */; };
+		54C97E0324C05A2900E6B987 /* LMJVerticalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C97DFF24C05A2900E6B987 /* LMJVerticalScrollText.m */; };
+		54C97E0424C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C97E0124C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m */; };
 		5DF1B401C153ABA806FBAA90 /* Pods_PlayGroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CA5A83AEC9657FA2534EC /* Pods_PlayGroundTests.framework */; };
 		655777B836A78B42F9C54F3A /* Pods_PlayGround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC41275CC98A35466AD5FB50 /* Pods_PlayGround.framework */; };
 		6BC5DDF30904EBAD23C1ECC0 /* Pods_PlayGroundUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147B9B5DD5C87783BDACA28 /* Pods_PlayGroundUITests.framework */; };
@@ -85,6 +93,11 @@
 		17F0470E62A43D75D4F0EE2E /* Pods-PlayGroundUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundUITests.release.xcconfig"; path = "Target Support Files/Pods-PlayGroundUITests/Pods-PlayGroundUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C313A6EB3FDD4647CED642A /* Pods-PlayGround-PlayGroundUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-PlayGroundUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround-PlayGroundUITests/Pods-PlayGround-PlayGroundUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D9CA5A83AEC9657FA2534EC /* Pods_PlayGroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayGroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		545456FE24C04B8600F44769 /* MyPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsViewController.swift; sourceTree = "<group>"; };
+		5454570024C04BAA00F44769 /* MyPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsView.swift; sourceTree = "<group>"; };
+		5454570224C04BFB00F44769 /* PointRewardInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRewardInfoTableCell.swift; sourceTree = "<group>"; };
+		5454570824C0532E00F44769 /* MyPointsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsHeaderView.swift; sourceTree = "<group>"; };
+		5454570A24C0544900F44769 /* UITableViewHeaderFooterView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+Extension.swift"; sourceTree = "<group>"; };
 		5459EA6E24BF023200A1D0FE /* CustomScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollViewController.swift; sourceTree = "<group>"; };
 		5459EA7024BF025100A1D0FE /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		54BF0DAB24BD8CE400629874 /* PlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +155,13 @@
 		54BF0E1924BD8DFC00629874 /* QuestionnaireView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		54BF0E1A24BD8DFC00629874 /* QuestionnaireHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireHeadView.swift; sourceTree = "<group>"; };
 		54BF0E1B24BD8DFC00629874 /* QuestionnaireTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireTableViewCell.swift; sourceTree = "<group>"; };
+		54C97DF824C059EA00E6B987 /* PlayGround-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlayGround-Bridging-Header.h"; sourceTree = "<group>"; };
+		54C97DFC24C05A2900E6B987 /* LMJVerticalScrollText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJVerticalScrollText.h; sourceTree = "<group>"; };
+		54C97DFD24C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ForLMJVerticalScrollText.m"; sourceTree = "<group>"; };
+		54C97DFE24C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ForLMJVerticalScrollText.h"; sourceTree = "<group>"; };
+		54C97DFF24C05A2900E6B987 /* LMJVerticalScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJVerticalScrollText.m; sourceTree = "<group>"; };
+		54C97E0024C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ForLMJVerticalScrollText.h"; sourceTree = "<group>"; };
+		54C97E0124C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ForLMJVerticalScrollText.m"; sourceTree = "<group>"; };
 		9038EA275955FC193E64DDD7 /* Pods-PlayGroundUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGroundUITests/Pods-PlayGroundUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92DF5226BD0A7BC4A0E5D6CF /* Pods-PlayGroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGroundTests/Pods-PlayGroundTests.debug.xcconfig"; sourceTree = "<group>"; };
 		94A467FB20D589FDC5B39A0E /* Pods-PlayGround-PlayGroundUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-PlayGroundUITests.release.xcconfig"; path = "Target Support Files/Pods-PlayGround-PlayGroundUITests/Pods-PlayGround-PlayGroundUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +224,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		545456F624C0259900F44769 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				545456FE24C04B8600F44769 /* MyPointsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		545456F724C025A000F44769 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5454570024C04BAA00F44769 /* MyPointsView.swift */,
+				5454570824C0532E00F44769 /* MyPointsHeaderView.swift */,
+				5454570224C04BFB00F44769 /* PointRewardInfoTableCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		545456F824C025A600F44769 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		545456FD24C04B2600F44769 /* PointsExchange */ = {
+			isa = PBXGroup;
+			children = (
+				545456F824C025A600F44769 /* Model */,
+				545456F724C025A000F44769 /* View */,
+				545456F624C0259900F44769 /* Controller */,
+			);
+			path = PointsExchange;
+			sourceTree = "<group>";
+		};
 		5459EA7224BF028D00A1D0FE /* CustomScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +295,7 @@
 			children = (
 				54BF0DAE24BD8CE400629874 /* AppDelegate.swift */,
 				54BF0DB224BD8CE400629874 /* ViewController.swift */,
+				545456FD24C04B2600F44769 /* PointsExchange */,
 				54BF0DF424BD8DFB00629874 /* DenyLogin */,
 				54BF0DF924BD8DFB00629874 /* DoctorLeft */,
 				54BF0DE024BD8DFB00629874 /* Evaluation */,
@@ -248,6 +304,7 @@
 				54BF0E0424BD8DFB00629874 /* Extension */,
 				54BF0E0E24BD8DFB00629874 /* Tools */,
 				54BF0DDE24BD8D3300629874 /* Launch Screen.storyboard */,
+				54C97DF824C059EA00E6B987 /* PlayGround-Bridging-Header.h */,
 				54BF0DB724BD8CE700629874 /* Assets.xcassets */,
 				54BF0DBC24BD8CE700629874 /* Info.plist */,
 			);
@@ -394,6 +451,7 @@
 				54BF0E0B24BD8DFB00629874 /* UIViewController+Extension.swift */,
 				54BF0E0C24BD8DFB00629874 /* String+Extension.swift */,
 				54BF0E0D24BD8DFB00629874 /* UITableViewCell+Extension.swift */,
+				5454570A24C0544900F44769 /* UITableViewHeaderFooterView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -401,6 +459,7 @@
 		54BF0E0E24BD8DFB00629874 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				54C97DFB24C05A2900E6B987 /* LMJVerticalScrollText */,
 				54BF0E0F24BD8DFB00629874 /* CountDownTimer.swift */,
 				54BF0E1024BD8DFB00629874 /* Const.swift */,
 				54BF0E1124BD8DFB00629874 /* HXSTimer.swift */,
@@ -443,6 +502,19 @@
 				54BF0E1B24BD8DFC00629874 /* QuestionnaireTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		54C97DFB24C05A2900E6B987 /* LMJVerticalScrollText */ = {
+			isa = PBXGroup;
+			children = (
+				54C97DFC24C05A2900E6B987 /* LMJVerticalScrollText.h */,
+				54C97DFF24C05A2900E6B987 /* LMJVerticalScrollText.m */,
+				54C97E0024C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.h */,
+				54C97DFD24C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.m */,
+				54C97DFE24C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.h */,
+				54C97E0124C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m */,
+			);
+			path = LMJVerticalScrollText;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,6 +589,7 @@
 				TargetAttributes = {
 					54BF0DAA24BD8CE400629874 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1160;
 					};
 					54BF0DC024BD8CE700629874 = {
 						CreatedOnToolsVersion = 11.5;
@@ -666,23 +739,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				54BF0E3A24BD8DFC00629874 /* UIView+Extension.swift in Sources */,
+				5454570924C0532E00F44769 /* MyPointsHeaderView.swift in Sources */,
 				54BF0E3F24BD8DFC00629874 /* Const.swift in Sources */,
 				5459EA6F24BF023200A1D0FE /* CustomScrollViewController.swift in Sources */,
+				5454570124C04BAA00F44769 /* MyPointsView.swift in Sources */,
 				54BF0E1C24BD8DFC00629874 /* FinalEvaluationInterface.swift in Sources */,
 				54BF0E2A24BD8DFC00629874 /* FinalEvaluationQuesCell.swift in Sources */,
 				54BF0E2924BD8DFC00629874 /* FinalEvaluationView.swift in Sources */,
 				54BF0E3B24BD8DFC00629874 /* UIViewController+Extension.swift in Sources */,
+				5454570324C04BFB00F44769 /* PointRewardInfoTableCell.swift in Sources */,
 				54BF0E2024BD8DFC00629874 /* FinalEvaluationChoiceAnswerView.swift in Sources */,
 				54BF0E4324BD8DFC00629874 /* AnswerChooseView.swift in Sources */,
 				54BF0E2F24BD8DFC00629874 /* DoctorLeftView.swift in Sources */,
 				54BF0E3324BD8DFC00629874 /* DoctorLeftHeaderView.swift in Sources */,
 				54BF0E3C24BD8DFC00629874 /* String+Extension.swift in Sources */,
 				54BF0E3124BD8DFC00629874 /* DoctorInfoTableHeaderView.swift in Sources */,
+				545456FF24C04B8600F44769 /* MyPointsViewController.swift in Sources */,
+				54C97E0324C05A2900E6B987 /* LMJVerticalScrollText.m in Sources */,
 				54BF0E1D24BD8DFC00629874 /* EvaluationResultViewController.swift in Sources */,
 				54BF0E3424BD8DFC00629874 /* DoctorInfoCollectionViewCell.swift in Sources */,
 				54BF0E1F24BD8DFC00629874 /* FinalEvaluationResultEntity.swift in Sources */,
 				54BF0E2C24BD8DFC00629874 /* DenyLoginViewController.swift in Sources */,
 				54BF0E2B24BD8DFC00629874 /* EvaluationEndView.swift in Sources */,
+				54C97E0224C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.m in Sources */,
 				54BF0E2324BD8DFC00629874 /* FinalEvaluationJudgeAnswerCell.swift in Sources */,
 				54BF0E3824BD8DFC00629874 /* Date+Extension.swift in Sources */,
 				54BF0E2E24BD8DFC00629874 /* DoctorLeftViewController.swift in Sources */,
@@ -703,6 +782,7 @@
 				54BF0E3024BD8DFC00629874 /* DoctorInfoTableFooterView.swift in Sources */,
 				54BF0E4524BD8DFC00629874 /* QuestionnaireHeadView.swift in Sources */,
 				5459EA7124BF025100A1D0FE /* CustomScrollView.swift in Sources */,
+				5454570B24C0544900F44769 /* UITableViewHeaderFooterView+Extension.swift in Sources */,
 				54BF0E4024BD8DFC00629874 /* HXSTimer.swift in Sources */,
 				54BF0E3224BD8DFC00629874 /* DoctorInfoTableViewCell.swift in Sources */,
 				54BF0E2524BD8DFC00629874 /* FinalEvaluationTableHeader.swift in Sources */,
@@ -710,6 +790,7 @@
 				54BF0E3D24BD8DFC00629874 /* UITableViewCell+Extension.swift in Sources */,
 				54BF0E2124BD8DFC00629874 /* EvaluationResultView.swift in Sources */,
 				54BF0E2424BD8DFC00629874 /* FinalEvaluationFootView.swift in Sources */,
+				54C97E0424C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m in Sources */,
 				54BF0E2D24BD8DFC00629874 /* DenyLoginView.swift in Sources */,
 				54BF0E2624BD8DFC00629874 /* FinalEvaluationJudgeAnswerView.swift in Sources */,
 			);
@@ -866,6 +947,7 @@
 			baseConfigurationReference = F96A0A0B7A93B38AF424ADA6 /* Pods-PlayGround.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DBBG7HCTM;
 				INFOPLIST_FILE = PlayGround/Info.plist;
@@ -875,6 +957,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lijingke.PlayGround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlayGround/PlayGround-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -885,6 +969,7 @@
 			baseConfigurationReference = D1A4C78C7AAA269E2DCFA911 /* Pods-PlayGround.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DBBG7HCTM;
 				INFOPLIST_FILE = PlayGround/Info.plist;
@@ -894,6 +979,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lijingke.PlayGround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlayGround/PlayGround-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

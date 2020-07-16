@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     // MARK: - Property
     let data: [BasicEntity] = {
-        return [BasicEntity(title: "问卷调查", vcName: "QuestionnaireController"), BasicEntity(title: "终期评估模拟", vcName: "FinalEvaluationViewController"), BasicEntity(title: "终期评估考核", vcName: "EvaluationResultViewController"), BasicEntity(title: "禁止登陆", vcName: "DenyLoginViewController"), BasicEntity(title: "医生已离开", vcName: "DoctorLeftViewController"), BasicEntity(title: "PlayGround", vcName: "CustomScrollViewController")]
+        return [BasicEntity(title: "问卷调查", vcName: "QuestionnaireController"), BasicEntity(title: "终期评估模拟", vcName: "FinalEvaluationViewController"), BasicEntity(title: "终期评估考核", vcName: "EvaluationResultViewController"), BasicEntity(title: "禁止登陆", vcName: "DenyLoginViewController"), BasicEntity(title: "医生已离开", vcName: "DoctorLeftViewController"), BasicEntity(title: "PlayGround", vcName: "CustomScrollViewController"), BasicEntity(title: "积分", vcName: "MyPointsViewController")]
     }()
 
     // MARK: Life Cycle

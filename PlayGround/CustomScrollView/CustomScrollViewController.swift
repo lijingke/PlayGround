@@ -40,8 +40,14 @@ class CustomScrollViewController: UIViewController {
 
 // MARK: - UI
 extension CustomScrollViewController {
+    
+    private func setupNavi() {
+        self.navigationController?.navigationBar.backgroundImage(for: .compactPrompt)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg_meidu"), for: .default)
+    }
+    
     private func setupUI() {
-        
+        setupNavi()
         let redView = UIView(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
         redView.backgroundColor = UIColor(red: 0.815, green: 0.007, blue: 0.105, alpha: 1)
         
