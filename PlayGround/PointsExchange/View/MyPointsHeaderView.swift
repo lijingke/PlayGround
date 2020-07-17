@@ -37,6 +37,7 @@ class MyPointsHeaderView: UITableViewHeaderFooterView {
         btn.titleLabel?.font = UIFont.medium(12)
         btn.layer.borderColor = UIColor(hex: 0x5662F8).cgColor
         btn.layer.borderWidth = 1
+        btn.layer.cornerRadius = 3
         btn.isEnabled = false
         return btn
     }()

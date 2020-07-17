@@ -10,6 +10,9 @@ import UIKit
 
 class MyPointsView: UIView {
     
+    // MARK: Property
+    public weak var delegate: MyPointsViewProtocol?
+    
     // MARK: - Lift Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,6 +26,7 @@ class MyPointsView: UIView {
     lazy var bgView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "bg")
+        view.isUserInteractionEnabled = true
         return view
     }()
     
@@ -33,7 +37,7 @@ class MyPointsView: UIView {
         table.estimatedRowHeight = 132
         table.separatorStyle = .none
         table.backgroundColor = .white
-        table.register(PointRewardInfoTableCell.self, forCellReuseIdentifier: PointRewardInfoTableCell.identifer)
+        table.register(PointRewardInfoTableCell.self, forCellReuseIdentifier: PointRewardInfoTableCell.identifier)
         table.register(MyPointsHeaderView.self, forHeaderFooterViewReuseIdentifier: MyPointsHeaderView.identifer)
         return table
     }()
@@ -56,27 +60,46 @@ class MyPointsView: UIView {
     
     lazy var detailsBtn: UIButton = {
         let btn = UIButton(type: .custom)
+        btn.tag = 1
         btn.titleLabel?.font = UIFont.regular(15)
         btn.setTitle("积分明细", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.layer.borderColor = UIColor.white.cgColor
         btn.layer.borderWidth = 0.5
         btn.layer.cornerRadius = 17
+        btn.addTarget(self, action: #selector(self.btnClicked(sender:)), for: .touchUpInside)
         return btn
     }()
     
     lazy var exchangeHistoryBtn: UIButton = {
         let btn = UIButton(type: .custom)
+        btn.tag = 2
         btn.titleLabel?.font = UIFont.regular(15)
         btn.setTitle("兑换记录", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.layer.borderColor = UIColor.white.cgColor
         btn.layer.borderWidth = 0.5
         btn.layer.cornerRadius = 17
+        btn.addTarget(self, action: #selector(self.btnClicked(sender:)), for: .touchUpInside)
         return btn
     }()
     
     
+}
+
+// MARK: - Data
+extension MyPointsView {
+    @objc private func btnClicked(sender: UIButton) {
+        
+        switch sender.tag {
+        case 1:
+            delegate?.jumpToPointRecords()
+        case 2:
+            delegate?.jumpToExchangeRecords()
+        default:
+            break
+        }
+    }
 }
 
 // MARK: - UI
@@ -120,6 +143,10 @@ extension MyPointsView: UITableViewDelegate {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: MyPointsHeaderView.identifer) else { return UIView() }
         return header
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.jumpToExchangeView()
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -129,11 +156,12 @@ extension MyPointsView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PointRewardInfoTableCell.identifer, for: indexPath) as? PointRewardInfoTableCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PointRewardInfoTableCell.identifier, for: indexPath) as? PointRewardInfoTableCell else {
             return UITableViewCell()
         }
         return cell
     }
+    
     
     
 }

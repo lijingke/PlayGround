@@ -55,7 +55,7 @@ class QuestionnaireView: UIView {
         table.backgroundColor = .white
         table.delegate = self
         table.dataSource = self
-        table.register(QuestionnaireTableViewCell.self, forCellReuseIdentifier: QuestionnaireTableViewCell.identifer)
+        table.register(QuestionnaireTableViewCell.self, forCellReuseIdentifier: QuestionnaireTableViewCell.identifier)
         table.separatorStyle = .none
         table.estimatedRowHeight = 100
         return table
@@ -84,7 +84,7 @@ extension QuestionnaireView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: QuestionnaireTableViewCell.identifer, for: indexPath) as? QuestionnaireTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: QuestionnaireTableViewCell.identifier, for: indexPath) as? QuestionnaireTableViewCell else { return UITableViewCell() }
         cell.entity = dataSource[indexPath.row]
         return cell
     }

@@ -9,10 +9,10 @@
 import UIKit
 
 extension UITableViewCell {
-    public static var identifer: String {
+    public static var identifier: String {
         return NSStringFromClass(self as AnyClass).components(separatedBy: ".").last ?? ""
     }
     public static var nib: UINib {
-        return UINib(nibName: self.identifer, bundle: nil)
+        return UINib(nibName: self.identifier, bundle: nil)
     }
 }

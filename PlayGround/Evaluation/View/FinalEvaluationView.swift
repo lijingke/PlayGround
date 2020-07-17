@@ -69,9 +69,9 @@ class FinalEvaluationView: UIView {
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
         table.backgroundColor = .clear
-        table.register(FinalEvaluationQuesCell.self, forCellReuseIdentifier: FinalEvaluationQuesCell.identifer)
-        table.register(FinalEvaluationChoiceAnswerCell.self, forCellReuseIdentifier: FinalEvaluationChoiceAnswerCell.identifer)
-        table.register(FinalEvaluationJudgeAnswerCell.self, forCellReuseIdentifier: FinalEvaluationJudgeAnswerCell.identifer)
+        table.register(FinalEvaluationQuesCell.self, forCellReuseIdentifier: FinalEvaluationQuesCell.identifier)
+        table.register(FinalEvaluationChoiceAnswerCell.self, forCellReuseIdentifier: FinalEvaluationChoiceAnswerCell.identifier)
+        table.register(FinalEvaluationJudgeAnswerCell.self, forCellReuseIdentifier: FinalEvaluationJudgeAnswerCell.identifier)
         table.delegate = self
         table.dataSource = self
         table.estimatedRowHeight = 100
@@ -190,13 +190,13 @@ extension FinalEvaluationView: UITableViewDataSource {
         if currentIndex < dataSource.count {
             var entity = dataSource[currentIndex]
             if indexPath.row == 0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: FinalEvaluationQuesCell.identifer, for: indexPath) as? FinalEvaluationQuesCell else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: FinalEvaluationQuesCell.identifier, for: indexPath) as? FinalEvaluationQuesCell else {
                     return UITableViewCell()
                 }
                 cell.setupData(entity.title ?? "")
                 return cell
             } else if entity.type == .some(.single) {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: FinalEvaluationChoiceAnswerCell.identifer, for: indexPath) as? FinalEvaluationChoiceAnswerCell else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: FinalEvaluationChoiceAnswerCell.identifier, for: indexPath) as? FinalEvaluationChoiceAnswerCell else {
                     return UITableViewCell()
                 }
                 
@@ -216,7 +216,7 @@ extension FinalEvaluationView: UITableViewDataSource {
                 }
                 return cell
             } else if entity.type == .some(.judge) {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: FinalEvaluationJudgeAnswerCell.identifer, for: indexPath) as? FinalEvaluationJudgeAnswerCell else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: FinalEvaluationJudgeAnswerCell.identifier, for: indexPath) as? FinalEvaluationJudgeAnswerCell else {
                     return UITableViewCell()
                 }
                 
