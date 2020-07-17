@@ -18,3 +18,7 @@ protocol ExchangeRecordsEventProtocol: NSObject {
     func copyAction()
     func recordClicked()
 }
+
+protocol ExchangeViewProtocol: NSObject {
+    func jumpToMagazineDetailView()
+}

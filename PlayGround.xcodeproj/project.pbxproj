@@ -24,6 +24,11 @@
 		549E8E0D24C194BA0071DFCD /* MonthlyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E0C24C194BA0071DFCD /* MonthlyCollectionCell.swift */; };
 		549E8E0F24C195120071DFCD /* MonthlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E0E24C195120071DFCD /* MonthlyTableViewCell.swift */; };
 		549E8E1124C19ABE0071DFCD /* MagazineInstructionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E1024C19ABE0071DFCD /* MagazineInstructionCell.swift */; };
+		549E8E1324C1A0110071DFCD /* MagazineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E1224C1A0110071DFCD /* MagazineDetailViewController.swift */; };
+		549E8E1524C1A0BA0071DFCD /* MagazineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E1424C1A0BA0071DFCD /* MagazineDetailView.swift */; };
+		549E8E1724C1A35C0071DFCD /* MagazineDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E1624C1A35C0071DFCD /* MagazineDetailTableCell.swift */; };
+		549E8E1924C1A5B60071DFCD /* MagazineDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E1824C1A5B60071DFCD /* MagazineDetailHeaderView.swift */; };
+		549E8E1D24C1AA7B0071DFCD /* MagazineIssueSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E1C24C1AA7B0071DFCD /* MagazineIssueSelectView.swift */; };
 		54AE798524C17392000120C4 /* DisplayTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE798424C17392000120C4 /* DisplayTextView.swift */; };
 		54AE798724C178C7000120C4 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE798624C178C7000120C4 /* ExchangeViewController.swift */; };
 		54BF0DAF24BD8CE400629874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0DAE24BD8CE400629874 /* AppDelegate.swift */; };
@@ -75,6 +80,7 @@
 		54BF0E4424BD8DFC00629874 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1924BD8DFC00629874 /* QuestionnaireView.swift */; };
 		54BF0E4524BD8DFC00629874 /* QuestionnaireHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1A24BD8DFC00629874 /* QuestionnaireHeadView.swift */; };
 		54BF0E4624BD8DFC00629874 /* QuestionnaireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1B24BD8DFC00629874 /* QuestionnaireTableViewCell.swift */; };
+		54C02E5124C1C6570056D8EB /* MagazineIssueHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C02E5024C1C6570056D8EB /* MagazineIssueHintView.swift */; };
 		54C12C3F24C0941500EC8C3F /* PointsRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C12C3E24C0941500EC8C3F /* PointsRecordsViewController.swift */; };
 		54C12C4124C0946400EC8C3F /* PointsRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C12C4024C0946400EC8C3F /* PointsRecordsView.swift */; };
 		54C12C4324C094F700EC8C3F /* MyPointsViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C12C4224C094F700EC8C3F /* MyPointsViewInterface.swift */; };
@@ -132,6 +138,11 @@
 		549E8E0C24C194BA0071DFCD /* MonthlyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCollectionCell.swift; sourceTree = "<group>"; };
 		549E8E0E24C195120071DFCD /* MonthlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTableViewCell.swift; sourceTree = "<group>"; };
 		549E8E1024C19ABE0071DFCD /* MagazineInstructionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineInstructionCell.swift; sourceTree = "<group>"; };
+		549E8E1224C1A0110071DFCD /* MagazineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineDetailViewController.swift; sourceTree = "<group>"; };
+		549E8E1424C1A0BA0071DFCD /* MagazineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineDetailView.swift; sourceTree = "<group>"; };
+		549E8E1624C1A35C0071DFCD /* MagazineDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineDetailTableCell.swift; sourceTree = "<group>"; };
+		549E8E1824C1A5B60071DFCD /* MagazineDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineDetailHeaderView.swift; sourceTree = "<group>"; };
+		549E8E1C24C1AA7B0071DFCD /* MagazineIssueSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineIssueSelectView.swift; sourceTree = "<group>"; };
 		54AE798424C17392000120C4 /* DisplayTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTextView.swift; sourceTree = "<group>"; };
 		54AE798624C178C7000120C4 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		54BF0DAB24BD8CE400629874 /* PlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +200,7 @@
 		54BF0E1924BD8DFC00629874 /* QuestionnaireView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		54BF0E1A24BD8DFC00629874 /* QuestionnaireHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireHeadView.swift; sourceTree = "<group>"; };
 		54BF0E1B24BD8DFC00629874 /* QuestionnaireTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireTableViewCell.swift; sourceTree = "<group>"; };
+		54C02E5024C1C6570056D8EB /* MagazineIssueHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineIssueHintView.swift; sourceTree = "<group>"; };
 		54C12C3E24C0941500EC8C3F /* PointsRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRecordsViewController.swift; sourceTree = "<group>"; };
 		54C12C4024C0946400EC8C3F /* PointsRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRecordsView.swift; sourceTree = "<group>"; };
 		54C12C4224C094F700EC8C3F /* MyPointsViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsViewInterface.swift; sourceTree = "<group>"; };
@@ -268,57 +280,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		545456F624C0259900F44769 /* Controller */ = {
+		545456F624C0259900F44769 /* MagazineDetail */ = {
 			isa = PBXGroup;
 			children = (
-				545456FE24C04B8600F44769 /* MyPointsViewController.swift */,
-				54C12C3E24C0941500EC8C3F /* PointsRecordsViewController.swift */,
-				54C12C4A24C0A27B00EC8C3F /* ExchangeRecordsViewController.swift */,
-				5412946524C138AB000B5920 /* ExchangeDetailViewController.swift */,
-				54AE798624C178C7000120C4 /* ExchangeViewController.swift */,
+				54C02E6824C1CC030056D8EB /* Model */,
+				54C02E6724C1CBFF0056D8EB /* View */,
+				54C02E6624C1CBF40056D8EB /* Controller */,
 			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		545456F724C025A000F44769 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5454570024C04BAA00F44769 /* MyPointsView.swift */,
-				5454570824C0532E00F44769 /* MyPointsHeaderView.swift */,
-				5454570224C04BFB00F44769 /* PointRewardInfoTableCell.swift */,
-				54C12C4024C0946400EC8C3F /* PointsRecordsView.swift */,
-				54C12C4424C09A5600EC8C3F /* PointsRecordsTableCell.swift */,
-				54C12C4624C09D3800EC8C3F /* PointsRecordsTableHeaderView.swift */,
-				54C12C4824C09FF300EC8C3F /* PointsRecordsTableSectionHeader.swift */,
-				54C12C4C24C0A2D600EC8C3F /* ExchangeRecordsView.swift */,
-				54C12C5024C0AE9900EC8C3F /* ExchangeRecordsTableCell.swift */,
-				5412946724C13906000B5920 /* ExchangeDetailView.swift */,
-				5491C11D24C152AC000A2812 /* ActivationCodeDetailsView.swift */,
-				5491C12124C15698000A2812 /* ExchangeInstructionsView.swift */,
-				549E8E0424C17A240071DFCD /* ExchangeView.swift */,
-				549E8E0624C1885C0071DFCD /* ExchangeView+Extension.swift */,
-				549E8E0824C18FAC0071DFCD /* ExchangeInstructionsCell.swift */,
-				549E8E0E24C195120071DFCD /* MonthlyTableViewCell.swift */,
-				549E8E0C24C194BA0071DFCD /* MonthlyCollectionCell.swift */,
-				549E8E1024C19ABE0071DFCD /* MagazineInstructionCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		545456F824C025A600F44769 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
+			path = MagazineDetail;
 			sourceTree = "<group>";
 		};
 		545456FD24C04B2600F44769 /* PointsExchange */ = {
 			isa = PBXGroup;
 			children = (
-				54C12C4224C094F700EC8C3F /* MyPointsViewInterface.swift */,
-				545456F824C025A600F44769 /* Model */,
-				545456F724C025A000F44769 /* View */,
-				545456F624C0259900F44769 /* Controller */,
+				54C02E5224C1C96A0056D8EB /* MyPoints */,
+				54C02E5624C1C9AA0056D8EB /* PointsRecord */,
+				54C02E5A24C1CA970056D8EB /* ExchangeRecord */,
+				54C02E5E24C1CAFB0056D8EB /* ExchangeDetail */,
+				54C02E6224C1CB610056D8EB /* Exchange */,
+				545456F624C0259900F44769 /* MagazineDetail */,
 			);
 			path = PointsExchange;
 			sourceTree = "<group>";
@@ -570,6 +550,212 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		54C02E5224C1C96A0056D8EB /* MyPoints */ = {
+			isa = PBXGroup;
+			children = (
+				54C02E5524C1C9850056D8EB /* Model */,
+				54C02E5424C1C97F0056D8EB /* View */,
+				54C02E5324C1C9750056D8EB /* Controller */,
+			);
+			path = MyPoints;
+			sourceTree = "<group>";
+		};
+		54C02E5324C1C9750056D8EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				545456FE24C04B8600F44769 /* MyPointsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		54C02E5424C1C97F0056D8EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5454570024C04BAA00F44769 /* MyPointsView.swift */,
+				5454570824C0532E00F44769 /* MyPointsHeaderView.swift */,
+				5454570224C04BFB00F44769 /* PointRewardInfoTableCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54C02E5524C1C9850056D8EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54C02E5624C1C9AA0056D8EB /* PointsRecord */ = {
+			isa = PBXGroup;
+			children = (
+				54C02E5924C1C9C40056D8EB /* Model */,
+				54C02E5824C1C9BE0056D8EB /* View */,
+				54C02E5724C1C9B60056D8EB /* Controller */,
+			);
+			path = PointsRecord;
+			sourceTree = "<group>";
+		};
+		54C02E5724C1C9B60056D8EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				54C12C3E24C0941500EC8C3F /* PointsRecordsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		54C02E5824C1C9BE0056D8EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54C12C4024C0946400EC8C3F /* PointsRecordsView.swift */,
+				54C12C4424C09A5600EC8C3F /* PointsRecordsTableCell.swift */,
+				54C12C4624C09D3800EC8C3F /* PointsRecordsTableHeaderView.swift */,
+				54C12C4824C09FF300EC8C3F /* PointsRecordsTableSectionHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54C02E5924C1C9C40056D8EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54C02E5A24C1CA970056D8EB /* ExchangeRecord */ = {
+			isa = PBXGroup;
+			children = (
+				54C12C4224C094F700EC8C3F /* MyPointsViewInterface.swift */,
+				54C02E5D24C1CABF0056D8EB /* Model */,
+				54C02E5C24C1CAAC0056D8EB /* View */,
+				54C02E5B24C1CAA60056D8EB /* Controller */,
+			);
+			path = ExchangeRecord;
+			sourceTree = "<group>";
+		};
+		54C02E5B24C1CAA60056D8EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				54C12C4A24C0A27B00EC8C3F /* ExchangeRecordsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		54C02E5C24C1CAAC0056D8EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54C12C4C24C0A2D600EC8C3F /* ExchangeRecordsView.swift */,
+				54C12C5024C0AE9900EC8C3F /* ExchangeRecordsTableCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54C02E5D24C1CABF0056D8EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54C02E5E24C1CAFB0056D8EB /* ExchangeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				54C02E6124C1CB380056D8EB /* Model */,
+				54C02E6024C1CB340056D8EB /* View */,
+				54C02E5F24C1CB2F0056D8EB /* Controller */,
+			);
+			path = ExchangeDetail;
+			sourceTree = "<group>";
+		};
+		54C02E5F24C1CB2F0056D8EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5412946524C138AB000B5920 /* ExchangeDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		54C02E6024C1CB340056D8EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5412946724C13906000B5920 /* ExchangeDetailView.swift */,
+				5491C11D24C152AC000A2812 /* ActivationCodeDetailsView.swift */,
+				5491C12124C15698000A2812 /* ExchangeInstructionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54C02E6124C1CB380056D8EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54C02E6224C1CB610056D8EB /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				54C02E6524C1CB780056D8EB /* Model */,
+				54C02E6424C1CB710056D8EB /* View */,
+				54C02E6324C1CB6A0056D8EB /* Controller */,
+			);
+			path = Exchange;
+			sourceTree = "<group>";
+		};
+		54C02E6324C1CB6A0056D8EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				54AE798624C178C7000120C4 /* ExchangeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		54C02E6424C1CB710056D8EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				549E8E0424C17A240071DFCD /* ExchangeView.swift */,
+				549E8E0624C1885C0071DFCD /* ExchangeView+Extension.swift */,
+				549E8E0824C18FAC0071DFCD /* ExchangeInstructionsCell.swift */,
+				549E8E0E24C195120071DFCD /* MonthlyTableViewCell.swift */,
+				549E8E0C24C194BA0071DFCD /* MonthlyCollectionCell.swift */,
+				549E8E1024C19ABE0071DFCD /* MagazineInstructionCell.swift */,
+				549E8E1C24C1AA7B0071DFCD /* MagazineIssueSelectView.swift */,
+				54C02E5024C1C6570056D8EB /* MagazineIssueHintView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54C02E6524C1CB780056D8EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54C02E6624C1CBF40056D8EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				549E8E1224C1A0110071DFCD /* MagazineDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		54C02E6724C1CBFF0056D8EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				549E8E1424C1A0BA0071DFCD /* MagazineDetailView.swift */,
+				549E8E1624C1A35C0071DFCD /* MagazineDetailTableCell.swift */,
+				549E8E1824C1A5B60071DFCD /* MagazineDetailHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54C02E6824C1CC030056D8EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		54C97DFB24C05A2900E6B987 /* LMJVerticalScrollText */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,6 +1000,7 @@
 				549E8E0F24C195120071DFCD /* MonthlyTableViewCell.swift in Sources */,
 				54BF0E2A24BD8DFC00629874 /* FinalEvaluationQuesCell.swift in Sources */,
 				54BF0E2924BD8DFC00629874 /* FinalEvaluationView.swift in Sources */,
+				549E8E1D24C1AA7B0071DFCD /* MagazineIssueSelectView.swift in Sources */,
 				54C12C4724C09D3800EC8C3F /* PointsRecordsTableHeaderView.swift in Sources */,
 				54BF0E3B24BD8DFC00629874 /* UIViewController+Extension.swift in Sources */,
 				5454570324C04BFB00F44769 /* PointRewardInfoTableCell.swift in Sources */,
@@ -834,7 +1021,9 @@
 				5412946624C138AB000B5920 /* ExchangeDetailViewController.swift in Sources */,
 				54BF0E1F24BD8DFC00629874 /* FinalEvaluationResultEntity.swift in Sources */,
 				54C12C4324C094F700EC8C3F /* MyPointsViewInterface.swift in Sources */,
+				549E8E1924C1A5B60071DFCD /* MagazineDetailHeaderView.swift in Sources */,
 				54BF0E2C24BD8DFC00629874 /* DenyLoginViewController.swift in Sources */,
+				549E8E1324C1A0110071DFCD /* MagazineDetailViewController.swift in Sources */,
 				54BF0E2B24BD8DFC00629874 /* EvaluationEndView.swift in Sources */,
 				54C12C4124C0946400EC8C3F /* PointsRecordsView.swift in Sources */,
 				54C12C4D24C0A2D600EC8C3F /* ExchangeRecordsView.swift in Sources */,
@@ -865,8 +1054,10 @@
 				54BF0E3024BD8DFC00629874 /* DoctorInfoTableFooterView.swift in Sources */,
 				5491C12224C15698000A2812 /* ExchangeInstructionsView.swift in Sources */,
 				54C12C5124C0AE9900EC8C3F /* ExchangeRecordsTableCell.swift in Sources */,
+				549E8E1524C1A0BA0071DFCD /* MagazineDetailView.swift in Sources */,
 				54BF0E4524BD8DFC00629874 /* QuestionnaireHeadView.swift in Sources */,
 				5459EA7124BF025100A1D0FE /* CustomScrollView.swift in Sources */,
+				54C02E5124C1C6570056D8EB /* MagazineIssueHintView.swift in Sources */,
 				5454570B24C0544900F44769 /* UITableViewHeaderFooterView+Extension.swift in Sources */,
 				54BF0E4024BD8DFC00629874 /* HXSTimer.swift in Sources */,
 				54BF0E3224BD8DFC00629874 /* DoctorInfoTableViewCell.swift in Sources */,
@@ -881,6 +1072,7 @@
 				54BF0E2D24BD8DFC00629874 /* DenyLoginView.swift in Sources */,
 				54AE798524C17392000120C4 /* DisplayTextView.swift in Sources */,
 				54BF0E2624BD8DFC00629874 /* FinalEvaluationJudgeAnswerView.swift in Sources */,
+				549E8E1724C1A35C0071DFCD /* MagazineDetailTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

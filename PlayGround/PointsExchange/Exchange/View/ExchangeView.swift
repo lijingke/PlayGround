@@ -9,6 +9,10 @@
 import UIKit
 
 class ExchangeView: UIView {
+    
+    // MARK: Property
+    weak var delegate: ExchangeViewProtocol?
+    
     // MARK: Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,7 +70,16 @@ class ExchangeView: UIView {
         let view = ChooseView()
         view.clickAction = { () in
             print("click")
+            UIApplication.shared.windows[0].addSubview(self.selectView)
+            self.selectView.snp.makeConstraints { (make) in
+                make.edges.equalToSuperview()
+            }
         }
+        return view
+    }()
+    
+    lazy var selectView: MagazineIssueSelectView = {
+        let view = MagazineIssueSelectView()
         return view
     }()
     
@@ -82,6 +95,7 @@ class ExchangeView: UIView {
         view.bounces = false
         view.isPagingEnabled = true
         view.backgroundColor = .white
+        view.showsHorizontalScrollIndicator = false
         return view
     }()
     
@@ -205,6 +219,11 @@ extension ExchangeView {
 // MARK: - UITableViewDelegate
 extension ExchangeView: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.tag == 2 && indexPath.row != 0 {
+            delegate?.jumpToMagazineDetailView()
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource

@@ -24,6 +24,7 @@ class ExchangeViewController: UIViewController {
     // MARK: Lazy Get
     lazy var mainView: ExchangeView = {
         let view = ExchangeView()
+        view.delegate = self
         return view
     }()
 
@@ -49,4 +50,13 @@ extension ExchangeViewController {
             make.edges.equalToSuperview()
         }
     }
+}
+
+// MARK: - ExchangeViewProtocol
+extension ExchangeViewController: ExchangeViewProtocol {
+    func jumpToMagazineDetailView() {
+        let vc = MagazineDetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }    
+    
 }
