@@ -14,6 +14,7 @@ class PointsRecordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        creatFakeData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,5 +51,33 @@ extension PointsRecordsViewController {
         mainView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+    }
+}
+
+// MARK: - Data
+extension PointsRecordsViewController {
+    private func creatFakeData() {
+        var dataArray: [MonthlyPointsEntity] = []
+        for i in 1...12 {
+            var entity = MonthlyPointsEntity()
+            entity.month = "2020年\(i)月"
+            var pointsArray: [MonthlyPointsEntity.PointsChangeEntity] = []
+            for j in 0..<10 {
+                var pointsEntity = MonthlyPointsEntity.PointsChangeEntity()
+                if j % 2 == 0 {
+                    pointsEntity.count = 20
+                    pointsEntity.title = "发布文章"
+                } else {
+                    pointsEntity.count = -30
+                    pointsEntity.title = "积分兑换"
+                }
+                pointsEntity.changeTime = "2019-03-08 02:25"
+                
+                pointsArray.append(pointsEntity)
+            }
+            entity.pointsArray = pointsArray
+            dataArray.append(entity)
+        }
+        mainView.setupData(dataSource: dataArray)
     }
 }

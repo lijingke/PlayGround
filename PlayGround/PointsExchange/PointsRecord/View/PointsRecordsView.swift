@@ -9,6 +9,10 @@
 import UIKit
 
 class PointsRecordsView: UIView {
+    
+    // MARK: Property
+    private var dataSource: [MonthlyPointsEntity] = []
+    
     // MARK: Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,6 +58,7 @@ class PointsRecordsView: UIView {
     }()
 }
 
+// MARK: - UI
 extension PointsRecordsView {
     private func setupUI() {
         backgroundColor = .white
@@ -79,6 +84,38 @@ extension PointsRecordsView {
         let header = PointsRecordsTableHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 69.5))
         tableView.tableHeaderView = header
     }
+    
+    private func openSection(section: Int) {
+        var model = dataSource[section]
+        model.isOpen.toggle()
+        var indexArray: [IndexPath] = []
+        for i in 0..<model.pointsArray.count {
+            let indexPath = IndexPath(row: i, section: section)
+            indexArray.append(indexPath)
+        }
+        dataSource[section] = model
+        tableView.insertRows(at: indexArray, with: .fade)
+    }
+    
+    private func closeSection(section: Int) {
+        var model = dataSource[section]
+        model.isOpen.toggle()
+        var indexArray: [IndexPath] = []
+        for i in 0..<model.pointsArray.count {
+            let indexPath = IndexPath(row: i, section: section)
+            indexArray.append(indexPath)
+        }
+        dataSource[section] = model
+        tableView.deleteRows(at: indexArray, with: .fade)
+    }
+}
+
+// MARK: - Data
+extension PointsRecordsView {
+    public func setupData(dataSource: [MonthlyPointsEntity]) {
+        self.dataSource = dataSource
+        tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -86,6 +123,19 @@ extension PointsRecordsView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: PointsRecordsTableSectionHeader.identifer) as? PointsRecordsTableSectionHeader else { return UIView() }
+        
+        var entity = PointsRecordsTableSectionHeader.RecordHeaderEntity()
+        entity.isOpen = dataSource[section].isOpen
+        entity.time = dataSource[section].month
+        entity.section = section
+        header.setupData(entity: entity)
+        
+        header.openBlock = { [weak self] (headSection) in
+            self?.openSection(section: headSection)
+        }
+        header.closeBlock = { [weak self] (headSection) in
+            self?.closeSection(section: headSection)
+        }
         return header
     }
     
@@ -106,15 +156,23 @@ extension PointsRecordsView: UITableViewDelegate {
 extension PointsRecordsView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 6
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        let data = dataSource[section]
+        if data.isOpen {
+            return dataSource[section].pointsArray.count
+        } else {
+            return 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PointsRecordsTableCell.identifier, for: indexPath) as? PointsRecordsTableCell else { return UITableViewCell() }
+        let pointsEntity = dataSource[indexPath.section].pointsArray[indexPath.row]
+        cell.setupData(pointsEntity)
         return cell
     }
     

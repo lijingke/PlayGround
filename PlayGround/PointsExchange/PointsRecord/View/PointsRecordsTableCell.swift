@@ -82,3 +82,16 @@ extension PointsRecordsTableCell {
         }
     }
 }
+
+// MARK: - Data
+extension PointsRecordsTableCell {
+    public func setupData(_ data: MonthlyPointsEntity.PointsChangeEntity) {
+        titleLabel.text = data.title
+        creatTimeLabel.text = data.changeTime
+        if let points = data.count {
+            countLabel.text = "\(points)"
+            titleLabel.textColor = points > 0 ? UIColor(hex: 0x3C3C3C) : UIColor(hex: 0x5161F9)
+            countLabel.textColor = points > 0 ? UIColor(hex: 0xFC9600) : UIColor(hex: 0xB4B4B4)
+        }
+    }
+}

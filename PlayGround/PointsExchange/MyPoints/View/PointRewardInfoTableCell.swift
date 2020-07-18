@@ -90,6 +90,8 @@ class PointRewardInfoTableCell: UITableViewCell {
 extension PointRewardInfoTableCell {
     
     private func setupUI() {
+        translatesAutoresizingMaskIntoConstraints = false
+        
         contentView.addSubview(bgView)
         bgView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(12.5)

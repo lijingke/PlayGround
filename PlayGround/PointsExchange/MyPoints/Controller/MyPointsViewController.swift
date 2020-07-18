@@ -21,6 +21,10 @@ class MyPointsViewController: UIViewController {
         setupNavi()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: Lazt Get
     lazy var mainView: MyPointsView = {
         let view = MyPointsView()

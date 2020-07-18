@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5412946624C138AB000B5920 /* ExchangeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412946524C138AB000B5920 /* ExchangeDetailViewController.swift */; };
 		5412946824C13906000B5920 /* ExchangeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412946724C13906000B5920 /* ExchangeDetailView.swift */; };
+		5430661D24C1D6B20053500C /* MonthlyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430661C24C1D6B20053500C /* MonthlyEntity.swift */; };
 		545456FF24C04B8600F44769 /* MyPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545456FE24C04B8600F44769 /* MyPointsViewController.swift */; };
 		5454570124C04BAA00F44769 /* MyPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454570024C04BAA00F44769 /* MyPointsView.swift */; };
 		5454570324C04BFB00F44769 /* PointRewardInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454570224C04BFB00F44769 /* PointRewardInfoTableCell.swift */; };
@@ -81,9 +82,9 @@
 		54BF0E4524BD8DFC00629874 /* QuestionnaireHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1A24BD8DFC00629874 /* QuestionnaireHeadView.swift */; };
 		54BF0E4624BD8DFC00629874 /* QuestionnaireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF0E1B24BD8DFC00629874 /* QuestionnaireTableViewCell.swift */; };
 		54C02E5124C1C6570056D8EB /* MagazineIssueHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C02E5024C1C6570056D8EB /* MagazineIssueHintView.swift */; };
+		54C02E6A24C1CCE00056D8EB /* PointsExchangeInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C02E6924C1CCE00056D8EB /* PointsExchangeInterface.swift */; };
 		54C12C3F24C0941500EC8C3F /* PointsRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C12C3E24C0941500EC8C3F /* PointsRecordsViewController.swift */; };
 		54C12C4124C0946400EC8C3F /* PointsRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C12C4024C0946400EC8C3F /* PointsRecordsView.swift */; };
-		54C12C4324C094F700EC8C3F /* MyPointsViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C12C4224C094F700EC8C3F /* MyPointsViewInterface.swift */; };
 		54C12C4524C09A5600EC8C3F /* PointsRecordsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C12C4424C09A5600EC8C3F /* PointsRecordsTableCell.swift */; };
 		54C12C4724C09D3800EC8C3F /* PointsRecordsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C12C4624C09D3800EC8C3F /* PointsRecordsTableHeaderView.swift */; };
 		54C12C4924C09FF300EC8C3F /* PointsRecordsTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C12C4824C09FF300EC8C3F /* PointsRecordsTableSectionHeader.swift */; };
@@ -94,6 +95,7 @@
 		54C97E0224C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C97DFD24C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.m */; };
 		54C97E0324C05A2900E6B987 /* LMJVerticalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C97DFF24C05A2900E6B987 /* LMJVerticalScrollText.m */; };
 		54C97E0424C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C97E0124C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m */; };
+		54E8FFED24C28A9700D547EC /* MonthlyPointsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8FFEC24C28A9700D547EC /* MonthlyPointsEntity.swift */; };
 		5DF1B401C153ABA806FBAA90 /* Pods_PlayGroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CA5A83AEC9657FA2534EC /* Pods_PlayGroundTests.framework */; };
 		655777B836A78B42F9C54F3A /* Pods_PlayGround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC41275CC98A35466AD5FB50 /* Pods_PlayGround.framework */; };
 		6BC5DDF30904EBAD23C1ECC0 /* Pods_PlayGroundUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147B9B5DD5C87783BDACA28 /* Pods_PlayGroundUITests.framework */; };
@@ -123,6 +125,7 @@
 		3D9CA5A83AEC9657FA2534EC /* Pods_PlayGroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayGroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5412946524C138AB000B5920 /* ExchangeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailViewController.swift; sourceTree = "<group>"; };
 		5412946724C13906000B5920 /* ExchangeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailView.swift; sourceTree = "<group>"; };
+		5430661C24C1D6B20053500C /* MonthlyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyEntity.swift; sourceTree = "<group>"; };
 		545456FE24C04B8600F44769 /* MyPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsViewController.swift; sourceTree = "<group>"; };
 		5454570024C04BAA00F44769 /* MyPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsView.swift; sourceTree = "<group>"; };
 		5454570224C04BFB00F44769 /* PointRewardInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRewardInfoTableCell.swift; sourceTree = "<group>"; };
@@ -201,9 +204,9 @@
 		54BF0E1A24BD8DFC00629874 /* QuestionnaireHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireHeadView.swift; sourceTree = "<group>"; };
 		54BF0E1B24BD8DFC00629874 /* QuestionnaireTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireTableViewCell.swift; sourceTree = "<group>"; };
 		54C02E5024C1C6570056D8EB /* MagazineIssueHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineIssueHintView.swift; sourceTree = "<group>"; };
+		54C02E6924C1CCE00056D8EB /* PointsExchangeInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsExchangeInterface.swift; sourceTree = "<group>"; };
 		54C12C3E24C0941500EC8C3F /* PointsRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRecordsViewController.swift; sourceTree = "<group>"; };
 		54C12C4024C0946400EC8C3F /* PointsRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRecordsView.swift; sourceTree = "<group>"; };
-		54C12C4224C094F700EC8C3F /* MyPointsViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsViewInterface.swift; sourceTree = "<group>"; };
 		54C12C4424C09A5600EC8C3F /* PointsRecordsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRecordsTableCell.swift; sourceTree = "<group>"; };
 		54C12C4624C09D3800EC8C3F /* PointsRecordsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRecordsTableHeaderView.swift; sourceTree = "<group>"; };
 		54C12C4824C09FF300EC8C3F /* PointsRecordsTableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRecordsTableSectionHeader.swift; sourceTree = "<group>"; };
@@ -218,6 +221,7 @@
 		54C97DFF24C05A2900E6B987 /* LMJVerticalScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJVerticalScrollText.m; sourceTree = "<group>"; };
 		54C97E0024C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ForLMJVerticalScrollText.h"; sourceTree = "<group>"; };
 		54C97E0124C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ForLMJVerticalScrollText.m"; sourceTree = "<group>"; };
+		54E8FFEC24C28A9700D547EC /* MonthlyPointsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPointsEntity.swift; sourceTree = "<group>"; };
 		9038EA275955FC193E64DDD7 /* Pods-PlayGroundUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGroundUITests/Pods-PlayGroundUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92DF5226BD0A7BC4A0E5D6CF /* Pods-PlayGroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGroundTests/Pods-PlayGroundTests.debug.xcconfig"; sourceTree = "<group>"; };
 		94A467FB20D589FDC5B39A0E /* Pods-PlayGround-PlayGroundUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-PlayGroundUITests.release.xcconfig"; path = "Target Support Files/Pods-PlayGround-PlayGroundUITests/Pods-PlayGround-PlayGroundUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 		545456FD24C04B2600F44769 /* PointsExchange */ = {
 			isa = PBXGroup;
 			children = (
+				54C02E6924C1CCE00056D8EB /* PointsExchangeInterface.swift */,
 				54C02E5224C1C96A0056D8EB /* MyPoints */,
 				54C02E5624C1C9AA0056D8EB /* PointsRecord */,
 				54C02E5A24C1CA970056D8EB /* ExchangeRecord */,
@@ -617,6 +622,7 @@
 		54C02E5924C1C9C40056D8EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				54E8FFEC24C28A9700D547EC /* MonthlyPointsEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -624,7 +630,6 @@
 		54C02E5A24C1CA970056D8EB /* ExchangeRecord */ = {
 			isa = PBXGroup;
 			children = (
-				54C12C4224C094F700EC8C3F /* MyPointsViewInterface.swift */,
 				54C02E5D24C1CABF0056D8EB /* Model */,
 				54C02E5C24C1CAAC0056D8EB /* View */,
 				54C02E5B24C1CAA60056D8EB /* Controller */,
@@ -727,6 +732,7 @@
 		54C02E6524C1CB780056D8EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5430661C24C1D6B20053500C /* MonthlyEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1007,6 +1013,7 @@
 				54BF0E2024BD8DFC00629874 /* FinalEvaluationChoiceAnswerView.swift in Sources */,
 				54BF0E4324BD8DFC00629874 /* AnswerChooseView.swift in Sources */,
 				54BF0E2F24BD8DFC00629874 /* DoctorLeftView.swift in Sources */,
+				54E8FFED24C28A9700D547EC /* MonthlyPointsEntity.swift in Sources */,
 				54BF0E3324BD8DFC00629874 /* DoctorLeftHeaderView.swift in Sources */,
 				54BF0E3C24BD8DFC00629874 /* String+Extension.swift in Sources */,
 				5491C11E24C152AC000A2812 /* ActivationCodeDetailsView.swift in Sources */,
@@ -1020,9 +1027,9 @@
 				54BF0E3424BD8DFC00629874 /* DoctorInfoCollectionViewCell.swift in Sources */,
 				5412946624C138AB000B5920 /* ExchangeDetailViewController.swift in Sources */,
 				54BF0E1F24BD8DFC00629874 /* FinalEvaluationResultEntity.swift in Sources */,
-				54C12C4324C094F700EC8C3F /* MyPointsViewInterface.swift in Sources */,
 				549E8E1924C1A5B60071DFCD /* MagazineDetailHeaderView.swift in Sources */,
 				54BF0E2C24BD8DFC00629874 /* DenyLoginViewController.swift in Sources */,
+				54C02E6A24C1CCE00056D8EB /* PointsExchangeInterface.swift in Sources */,
 				549E8E1324C1A0110071DFCD /* MagazineDetailViewController.swift in Sources */,
 				54BF0E2B24BD8DFC00629874 /* EvaluationEndView.swift in Sources */,
 				54C12C4124C0946400EC8C3F /* PointsRecordsView.swift in Sources */,
@@ -1032,6 +1039,7 @@
 				54BF0E2324BD8DFC00629874 /* FinalEvaluationJudgeAnswerCell.swift in Sources */,
 				54BF0E3824BD8DFC00629874 /* Date+Extension.swift in Sources */,
 				54BF0E2E24BD8DFC00629874 /* DoctorLeftViewController.swift in Sources */,
+				5430661D24C1D6B20053500C /* MonthlyEntity.swift in Sources */,
 				54BF0E3524BD8DFC00629874 /* UIFont+Extension.swift in Sources */,
 				5412946824C13906000B5920 /* ExchangeDetailView.swift in Sources */,
 				54BF0E4224BD8DFC00629874 /* QuestionEntity.swift in Sources */,

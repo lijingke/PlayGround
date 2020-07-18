@@ -33,6 +33,8 @@ class MagazineIssueSelectView: UIView {
         let view = UIView()
         view.backgroundColor = UIColor.white.withAlphaComponent(1)
         view.layer.cornerRadius = 8
+        let tap = UITapGestureRecognizer(target: nil, action: nil)
+        view.addGestureRecognizer(tap)
         return view
     }()
     

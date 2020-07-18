@@ -12,6 +12,17 @@ class MonthlyCollectionCell: UICollectionViewCell {
     
     // MARK: Property
     static let identifier = "MonthlyCollectionCell"
+    private var selectStatus: Bool = false {
+        didSet {
+            if selectStatus {
+                backgroundColor = UIColor(hex: 0x5161F9)
+                titleLabel.textColor = .white
+            } else {
+                backgroundColor = UIColor(hex: 0xF7F7F7)
+                titleLabel.textColor = UIColor(hex: 0x7E7E7E)
+            }
+        }
+    }
     
     // MARK: Life Cycle
     override init(frame: CGRect) {
@@ -33,7 +44,7 @@ class MonthlyCollectionCell: UICollectionViewCell {
     }()
 }
 
-// MARK: - UI
+// MARK: - UI && Data
 extension MonthlyCollectionCell {
     private func setupUI() {
         backgroundColor = UIColor(hex: 0xF7F7F7)
@@ -41,5 +52,10 @@ extension MonthlyCollectionCell {
         titleLabel.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
         }
+    }
+    
+    public func setupData(_ data: MonthlyEntity) {
+        titleLabel.text = data.title
+        selectStatus = data.isSelected
     }
 }

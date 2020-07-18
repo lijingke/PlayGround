@@ -36,7 +36,10 @@ extension ExchangeInstructionsCell {
     private func setupUI() {
         contentView.addSubview(instructionsLabel)
         instructionsLabel.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.top.equalToSuperview().offset(22.5)
+            make.left.equalToSuperview().offset(15)
+            make.right.equalToSuperview().offset(-15)
+            make.bottom.equalToSuperview().offset(-16.5)
         }
     }
     

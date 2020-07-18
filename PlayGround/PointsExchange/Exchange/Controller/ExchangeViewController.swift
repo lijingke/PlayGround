@@ -27,7 +27,7 @@ class ExchangeViewController: UIViewController {
         view.delegate = self
         return view
     }()
-
+    
 }
 
 // MARK: - UI
@@ -43,7 +43,7 @@ extension ExchangeViewController {
         // 4.设置阴影
         navigationController?.navigationBar.getNaviLine()?.isHidden = false
     }
-
+    
     private func setupUI() {
         view.addSubview(mainView)
         mainView.snp.makeConstraints { (make) in
@@ -54,6 +54,16 @@ extension ExchangeViewController {
 
 // MARK: - ExchangeViewProtocol
 extension ExchangeViewController: ExchangeViewProtocol {
+    func exchangePoints() {
+        
+        let view = MagazineIssueHintView()
+        UIApplication.shared.windows[0].addSubview(view)
+        view.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+    }
+    
     func jumpToMagazineDetailView() {
         let vc = MagazineDetailViewController()
         navigationController?.pushViewController(vc, animated: true)

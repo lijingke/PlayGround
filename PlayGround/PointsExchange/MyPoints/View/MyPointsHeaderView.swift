@@ -78,11 +78,11 @@ extension MyPointsHeaderView {
             make.left.equalTo(indicator.snp.right).offset(8.25)
             make.right.equalToSuperview().offset(-13.25)
         }
+        scrollText.startScrollBottomToTopWithNoSpace()
 
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        scrollText.startScrollBottomToTopWithNoSpace()
     }
 }

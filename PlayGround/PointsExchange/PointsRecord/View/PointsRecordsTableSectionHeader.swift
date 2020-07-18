@@ -10,6 +10,18 @@ import UIKit
 
 class PointsRecordsTableSectionHeader: UITableViewHeaderFooterView {
     
+    struct RecordHeaderEntity {
+        var isOpen = true
+        var section: Int = 0
+        var time: String?
+    }
+    
+    // MARK: Property
+    private var entity: RecordHeaderEntity = RecordHeaderEntity()
+    
+    public var openBlock: ((Int)->())?
+    public var closeBlock: ((Int)->())?
+    
     // MARK:  Life Cycle
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -32,8 +44,26 @@ class PointsRecordsTableSectionHeader: UITableViewHeaderFooterView {
     lazy var foldBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "up"), for: .normal)
+        btn.addTarget(self, action: #selector(self.tapAction), for: .touchUpInside)
         return btn
     }()
+}
+
+extension PointsRecordsTableSectionHeader {
+    @objc private func tapAction() {
+        if entity.isOpen {
+            UIView.animate(withDuration: 0.3) {
+                self.foldBtn.transform = self.foldBtn.transform.rotated(by: .pi / 2)
+            }
+            closeBlock?(entity.section)
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.foldBtn.transform = self.foldBtn.transform.rotated(by: -.pi / 2)
+            }
+            openBlock?(entity.section)
+        }
+        entity.isOpen.toggle()
+    }
 }
 
 // MARK: - UI
@@ -50,5 +80,24 @@ extension PointsRecordsTableSectionHeader {
             make.right.equalToSuperview().offset(-33.5)
             make.size.equalTo(CGSize(width: 18, height: 10))
         }
+    }
+}
+
+// MARK: - Data
+extension PointsRecordsTableSectionHeader {
+    
+    public func setupData(entity: RecordHeaderEntity) {
+        self.entity = entity
+        timeLabel.text = entity.time
+        self.foldBtn.transform = CGAffineTransform.identity
+
+        if entity.isOpen {
+            
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.foldBtn.transform = self.foldBtn.transform.rotated(by: .pi / 2)
+            }
+        }
+        
     }
 }

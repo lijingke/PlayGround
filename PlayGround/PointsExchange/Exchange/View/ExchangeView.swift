@@ -66,10 +66,14 @@ class ExchangeView: UIView {
         return view
     }()
     
+    lazy var segmentBar: SegmentBar = {
+        let vc = SegmentBar()
+        return vc
+    }()
+    
     lazy var chooseBtn: ChooseView = {
         let view = ChooseView()
         view.clickAction = { () in
-            print("click")
             UIApplication.shared.windows[0].addSubview(self.selectView)
             self.selectView.snp.makeConstraints { (make) in
                 make.edges.equalToSuperview()
@@ -83,7 +87,7 @@ class ExchangeView: UIView {
         return view
     }()
     
-    lazy var separateLine: UIView = {
+    lazy var separatorLine: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(hex: 0xF7F7F7)
         return view
@@ -134,6 +138,7 @@ class ExchangeView: UIView {
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = UIColor(hex: 0x5161F9)
         btn.titleLabel?.font = UIFont.regular(17)
+        btn.addTarget(self, action: #selector(self.exchangeAction), for: .touchUpInside)
         return btn
     }()
     
@@ -149,7 +154,8 @@ extension ExchangeView {
         addSubview(chooseLine)
         addSubview(chooseLabel)
         addSubview(chooseBtn)
-        addSubview(separateLine)
+        addSubview(separatorLine)
+        addSubview(segmentBar)
         addSubview(exchangeBtn)
         addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -180,13 +186,18 @@ extension ExchangeView {
             make.right.equalToSuperview().offset(-15)
             make.height.equalTo(45)
         }
-        separateLine.snp.makeConstraints { (make) in
+        separatorLine.snp.makeConstraints { (make) in
             make.top.equalTo(chooseBtn.snp.bottom).offset(28.5)
             make.left.right.equalToSuperview()
             make.height.equalTo(11.5)
         }
+        segmentBar.snp.makeConstraints { (make) in
+            make.top.equalTo(separatorLine.snp.bottom)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(45)
+        }
         scrollView.snp.makeConstraints { (make) in
-            make.top.equalTo(separateLine.snp.bottom)
+            make.top.equalTo(segmentBar.snp.bottom)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(exchangeBtn.snp.top)
         }
@@ -213,6 +224,13 @@ extension ExchangeView {
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
             make.height.equalTo(45)
         }
+    }
+}
+
+// MARK: - Event
+extension ExchangeView {
+    @objc private func exchangeAction() {
+        delegate?.exchangePoints()
     }
 }
 

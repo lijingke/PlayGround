@@ -10,10 +10,19 @@ import UIKit
 
 class MonthlyTableViewCell: UITableViewCell {
     
+    // MARK: Property
+    public var monthlyData: [MonthlyEntity] = []
+    
     // MARK: Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+        var data: [MonthlyEntity] = []
+        for i in 0..<11 {
+            let month = MonthlyEntity(id: "", title: "\(i)期", isSelected: false)
+            data.append(month)
+        }
+        monthlyData = data
     }
     
     required init?(coder: NSCoder) {
@@ -61,11 +70,13 @@ extension MonthlyTableViewCell {
 // MARK: - UICollectionViewDataSource
 extension MonthlyTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return monthlyData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MonthlyCollectionCell.identifier, for: indexPath) as? MonthlyCollectionCell else { return UICollectionViewCell() }
+        let entity = monthlyData[indexPath.item]
+        cell.setupData(entity)
         return cell
     }
     
@@ -74,5 +85,11 @@ extension MonthlyTableViewCell: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension MonthlyTableViewCell: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        for (index, _) in monthlyData.enumerated() {
+            monthlyData[index].isSelected = false
+        }
+        monthlyData[indexPath.item].isSelected.toggle()
+        collectionView.reloadData()
+    }
 }
