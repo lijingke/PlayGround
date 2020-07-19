@@ -67,6 +67,15 @@ extension ActivationCodeDetailsView {
     }
 }
 
+// MARK: Data
+extension ActivationCodeDetailsView {
+    public func setupData(data: ExchangeRecordModel) {
+        activationCode.text = "激活码：\(data.activationCode ?? "")"
+        exchangeTime.text = "兑换日期：\(data.exchangeTime ?? "")"
+        spendPoints.text = "使用积分：\(data.spendPoints ?? 0)"
+    }
+}
+
 // MARK: - UI
 extension ActivationCodeDetailsView {
     private func setupUI() {

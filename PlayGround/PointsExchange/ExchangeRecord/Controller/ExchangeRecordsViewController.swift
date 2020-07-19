@@ -13,6 +13,7 @@ class ExchangeRecordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        creatFakeData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,15 +53,29 @@ extension ExchangeRecordsViewController {
     
 }
 
+// MARK: - Data
+extension ExchangeRecordsViewController {
+    private func creatFakeData() {
+        var dataSource: [ExchangeRecordModel] = []
+        for i in 0..<10 {
+            var data = ExchangeRecordModel()
+            data.title = "中华皮肤科杂志电子版激活码（年）"
+            data.coverURL = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595156615146&di=dfe1d2b56a47af6aa714f5c2afc741c5&imgtype=0&src=http%3A%2F%2F02imgmini.eastday.com%2Fmobile%2F20181106%2F20181106170917_96c0333f9e103b4b1abc3ec6ab20fdbd_1.jpeg"
+            data.exchangeTime = "2020-6-20"
+            data.spendPoints = i
+            data.activationCode = "wheel"
+            dataSource.append(data)
+        }
+        mainView.setupData(dataSource: dataSource)
+    }
+}
+
 // MARK: - ExchangeRecordsEventProtocol
 extension ExchangeRecordsViewController: ExchangeRecordsEventProtocol {
-    func copyAction() {
-        
-    }
     
-    func recordClicked() {
+    func recordClicked(_ recordInfo: ExchangeRecordModel) {
         let vc = ExchangeDetailViewController()
+        vc.recordEntity = recordInfo
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }

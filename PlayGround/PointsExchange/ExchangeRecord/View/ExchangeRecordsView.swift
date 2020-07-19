@@ -12,6 +12,7 @@ class ExchangeRecordsView: UIView {
     
     // MARK: Property
     public weak var delegate: ExchangeRecordsEventProtocol?
+    private var dataSource: [ExchangeRecordModel] = []
     
     // MARK: Life Cycle
     override init(frame: CGRect) {
@@ -45,22 +46,35 @@ extension ExchangeRecordsView {
     }
 }
 
+// MARK: - Data
+extension ExchangeRecordsView {
+    public func setupData(dataSource: [ExchangeRecordModel]) {
+        self.dataSource = dataSource
+        tableView.reloadData()
+    }
+}
+
+// MARK: - UITableViewDelegate
 extension ExchangeRecordsView: UITableViewDelegate {
     
 }
 
+// MARK: - UITableViewDataSource
 extension ExchangeRecordsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ExchangeRecordsTableCell.identifier, for: indexPath) as? ExchangeRecordsTableCell else { return UITableViewCell() }
+        let data = dataSource[indexPath.row]
+        cell.setupData(data)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.recordClicked()
+        let data = dataSource[indexPath.row]
+        delegate?.recordClicked(data)
     }
     
     

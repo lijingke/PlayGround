@@ -260,8 +260,9 @@ extension ExchangeView {
 extension ExchangeView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.tag == 2 && indexPath.row > 0 {
-            if let entity = dataSource?[monthly][indexPath.row - 1] {
+        if tableView.tag == 2 {
+            let indexRow = isAnnual ? indexPath.row - 1 : indexPath.row
+            if let entity = dataSource?[monthly][indexRow] {
                 delegate?.jumpToMagazineDetailView(with: entity)
             }
         }

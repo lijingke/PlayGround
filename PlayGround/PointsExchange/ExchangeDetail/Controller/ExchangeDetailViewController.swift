@@ -10,6 +10,13 @@ import UIKit
 
 class ExchangeDetailViewController: UIViewController {
     
+    // MARK: Property
+    public var recordEntity: ExchangeRecordModel? {
+        didSet {
+            mainView.setupData(recordEntity!)
+        }
+    }
+    
     // MARK: Lift Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

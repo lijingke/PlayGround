@@ -9,9 +9,7 @@
 import UIKit
 
 class MyPointsHeaderView: UITableViewHeaderFooterView {
-    
-    private var scrollArray: [String] = ["AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "BBBBBB", "CCCCCC"]
-    
+        
     // MARK: Life Cycle
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -45,7 +43,6 @@ class MyPointsHeaderView: UITableViewHeaderFooterView {
     lazy var scrollText: LMJVerticalScrollText = {
         let width = UIScreen.main.bounds.width - 66.5
         let view = LMJVerticalScrollText(frame: CGRect(x: 0, y: 0, width: width, height: 20))
-        view.textDataArr = self.scrollArray
         view.textStayTime = 1
         view.scrollAnimationTime = 1
         view.textColor = UIColor(hex: 0x7E7E7E)
@@ -53,6 +50,25 @@ class MyPointsHeaderView: UITableViewHeaderFooterView {
         return view
     }()
     
+}
+
+// MARK: - Data
+extension MyPointsHeaderView {
+    public func setupData(scrollArray: [String]) {
+        if scrollArray.count == 0 {
+            titleLabel.snp.updateConstraints { (make) in
+                make.bottom.equalToSuperview().offset(0)
+            }
+            indicator.removeFromSuperview()
+            scrollText.removeFromSuperview()
+            return
+        }
+        if scrollText.textDataArr as? [String] == scrollArray {
+            return
+        }
+        scrollText.textDataArr = scrollArray
+        scrollText.startScrollBottomToTopWithNoSpace()
+    }
 }
 
 // MARK: - UI
@@ -66,23 +82,18 @@ extension MyPointsHeaderView {
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(10)
             make.left.equalToSuperview().offset(15)
+            make.bottom.equalToSuperview().offset(-43)
         }
         indicator.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom).offset(14.75)
             make.left.equalTo(titleLabel)
             make.size.equalTo(CGSize(width: 37.5, height: 17))
-            make.bottom.equalToSuperview().offset(-9.5)
         }
         scrollText.snp.makeConstraints { (make) in
             make.top.bottom.equalTo(indicator)
             make.left.equalTo(indicator.snp.right).offset(8.25)
             make.right.equalToSuperview().offset(-13.25)
         }
-        scrollText.startScrollBottomToTopWithNoSpace()
 
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
     }
 }

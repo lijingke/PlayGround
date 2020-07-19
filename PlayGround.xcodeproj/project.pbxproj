@@ -19,6 +19,7 @@
 		5459EA7124BF025100A1D0FE /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459EA7024BF025100A1D0FE /* CustomScrollView.swift */; };
 		5491C11E24C152AC000A2812 /* ActivationCodeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491C11D24C152AC000A2812 /* ActivationCodeDetailsView.swift */; };
 		5491C12224C15698000A2812 /* ExchangeInstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491C12124C15698000A2812 /* ExchangeInstructionsView.swift */; };
+		5493754024C435C10027F347 /* ExchangeRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493753F24C435C10027F347 /* ExchangeRecordModel.swift */; };
 		549E8E0524C17A240071DFCD /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E0424C17A240071DFCD /* ExchangeView.swift */; };
 		549E8E0924C18FAC0071DFCD /* ExchangeInstructionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E0824C18FAC0071DFCD /* ExchangeInstructionsCell.swift */; };
 		549E8E0D24C194BA0071DFCD /* MonthlyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E8E0C24C194BA0071DFCD /* MonthlyCollectionCell.swift */; };
@@ -139,6 +140,7 @@
 		5459EA7024BF025100A1D0FE /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		5491C11D24C152AC000A2812 /* ActivationCodeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationCodeDetailsView.swift; sourceTree = "<group>"; };
 		5491C12124C15698000A2812 /* ExchangeInstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInstructionsView.swift; sourceTree = "<group>"; };
+		5493753F24C435C10027F347 /* ExchangeRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRecordModel.swift; sourceTree = "<group>"; };
 		549E8E0424C17A240071DFCD /* ExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeView.swift; sourceTree = "<group>"; };
 		549E8E0824C18FAC0071DFCD /* ExchangeInstructionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInstructionsCell.swift; sourceTree = "<group>"; };
 		549E8E0C24C194BA0071DFCD /* MonthlyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCollectionCell.swift; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 		54C02E5D24C1CABF0056D8EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5493753F24C435C10027F347 /* ExchangeRecordModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1079,6 +1082,7 @@
 				5459EA7124BF025100A1D0FE /* CustomScrollView.swift in Sources */,
 				54C02E5124C1C6570056D8EB /* MagazineIssueHintView.swift in Sources */,
 				54F3FDBE24C403A3008FBEC2 /* Loading.swift in Sources */,
+				5493754024C435C10027F347 /* ExchangeRecordModel.swift in Sources */,
 				5454570B24C0544900F44769 /* UITableViewHeaderFooterView+Extension.swift in Sources */,
 				54BF0E4024BD8DFC00629874 /* HXSTimer.swift in Sources */,
 				54A21A7924C2D0BA003F97BE /* ChooseView.swift in Sources */,

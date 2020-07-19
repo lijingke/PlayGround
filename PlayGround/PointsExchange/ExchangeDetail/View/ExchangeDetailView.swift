@@ -20,9 +20,11 @@ class ExchangeDetailView: UIView {
     }
     
     // MARK: - Lazy Get
-    lazy var bgView: UIImageView = {
+    lazy var coverImgView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "img")
+        view.contentMode = .center
+        view.clipsToBounds = true
         return view
     }()
     
@@ -47,19 +49,20 @@ class ExchangeDetailView: UIView {
     
 }
 
+// MARK: - UI
 extension ExchangeDetailView {
     private func setupUI() {
         backgroundColor = .white
-        addSubview(bgView)
+        addSubview(coverImgView)
         addSubview(titleLabel)
         addSubview(codeDetailsView)
         addSubview(exchangeInstructionsView)
-        bgView.snp.makeConstraints { (make) in
+        coverImgView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(snp.width).multipliedBy(0.533)
         }
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(bgView.snp.bottom).offset(20.5)
+            make.top.equalTo(coverImgView.snp.bottom).offset(20.5)
             make.left.equalToSuperview().offset(15)
         }
         codeDetailsView.snp.makeConstraints { (make) in
@@ -72,5 +75,14 @@ extension ExchangeDetailView {
             make.top.equalTo(codeDetailsView.snp.bottom)
             make.left.bottom.right.equalToSuperview()
         }
+    }
+}
+
+// MARK: - Data
+extension ExchangeDetailView {
+    public func setupData(_ data: ExchangeRecordModel) {
+        coverImgView.sd_setImage(with: URL(string: data.coverURL ?? ""), placeholderImage: UIImage(named: "img"))
+        titleLabel.text = data.title
+        codeDetailsView.setupData(data: data)
     }
 }

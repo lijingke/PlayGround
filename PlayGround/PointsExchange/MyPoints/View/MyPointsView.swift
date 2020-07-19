@@ -13,6 +13,7 @@ class MyPointsView: UIView {
     // MARK: Property
     public weak var delegate: MyPointsViewProtocol?
     private var dataSource: [MagazineInfoEntity] = []
+    private var scrollArray: [String] = []
     
     // MARK: - Lift Cycle
     override init(frame: CGRect) {
@@ -140,8 +141,9 @@ extension MyPointsView {
 
 // MARK: - Data
 extension MyPointsView {
-    public func setupData(dataSource: [MagazineInfoEntity]) {
+    public func setupData(dataSource: [MagazineInfoEntity], dynamic: [String]) {
         self.dataSource = dataSource
+        self.scrollArray = dynamic
         tableView.reloadData()
     }
 }
@@ -149,7 +151,8 @@ extension MyPointsView {
 // MARK: - UITableViewDelegate
 extension MyPointsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: MyPointsHeaderView.identifer) else { return UIView() }
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: MyPointsHeaderView.identifer) as? MyPointsHeaderView else { return UIView() }
+        header.setupData(scrollArray: self.scrollArray)
         return header
     }
     

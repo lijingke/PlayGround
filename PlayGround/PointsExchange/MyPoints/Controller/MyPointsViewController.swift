@@ -83,7 +83,8 @@ extension MyPointsViewController {
             entity.coverURL = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595150773583&di=3defd5ed66c3b383bb56f13ab4e2ea44&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201604%2F28%2F20160428183154_vhrJa.jpeg"
             dataSource.append(entity)
         }
-        mainView.setupData(dataSource: dataSource)
+        let dynamic: [String] = ["AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "BBBBBB", "CCCCCC", "DDDDD"]
+        mainView.setupData(dataSource: dataSource, dynamic: dynamic)
     }
 }
 

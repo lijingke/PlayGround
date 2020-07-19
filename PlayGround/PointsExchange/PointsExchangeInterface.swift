@@ -15,12 +15,10 @@ protocol MyPointsViewProtocol: NSObject {
 }
 
 protocol ExchangeRecordsEventProtocol: NSObject {
-    func copyAction()
-    func recordClicked()
+    func recordClicked(_ recordInfo: ExchangeRecordModel)
 }
 
 protocol ExchangeViewProtocol: NSObject {
     func jumpToMagazineDetailView(with magazine: ArticleDetailModel)
     func exchangePoints()
 }
-

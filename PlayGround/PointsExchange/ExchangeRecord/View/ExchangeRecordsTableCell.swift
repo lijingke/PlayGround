@@ -34,7 +34,7 @@ class ExchangeRecordsTableCell: UITableViewCell {
         return view
     }()
     
-    lazy var coverImg: UIImageView = {
+    lazy var coverImgView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "img3")
         return view
@@ -98,12 +98,23 @@ extension ExchangeRecordsTableCell {
     }
 }
 
+// MARK: - Data
+extension ExchangeRecordsTableCell {
+    public func setupData(_ data: ExchangeRecordModel) {
+        coverImgView.sd_setImage(with: URL(string: data.coverURL ?? ""), placeholderImage: UIImage(named: "img3"))
+        titleLabel.text = data.title
+        exchangeTime.text = "兑换日期：\(data.exchangeTime ?? "")"
+        spendPoints.text = "使用积分：\(data.spendPoints ?? 0)"
+        activationCode.text = "激活码：\(data.activationCode ?? "")"
+    }
+}
+
 // MARK: - UI
 extension ExchangeRecordsTableCell {
     
     private func setupUI() {
         contentView.addSubview(bgView)
-        bgView.addSubview(coverImg)
+        bgView.addSubview(coverImgView)
         bgView.addSubview(titleLabel)
         bgView.addSubview(exchangeTime)
         bgView.addSubview(spendPoints)
@@ -117,14 +128,14 @@ extension ExchangeRecordsTableCell {
             make.bottom.equalToSuperview().offset(-17)
             make.height.equalTo(177)
         }
-        coverImg.snp.makeConstraints { (make) in
+        coverImgView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(17.5)
             make.left.equalToSuperview().offset(13.5)
             make.size.equalTo(CGSize(width: 89, height: 89))
         }
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(coverImg)
-            make.left.equalTo(coverImg.snp.right).offset(15)
+            make.top.equalTo(coverImgView)
+            make.left.equalTo(coverImgView.snp.right).offset(15)
             make.right.equalToSuperview().offset(-35)
         }
         exchangeTime.snp.makeConstraints { (make) in
@@ -133,10 +144,10 @@ extension ExchangeRecordsTableCell {
         }
         spendPoints.snp.makeConstraints { (make) in
             make.left.equalTo(titleLabel)
-            make.bottom.equalTo(coverImg)
+            make.bottom.equalTo(coverImgView)
         }
         separatorLine.snp.makeConstraints { (make) in
-            make.top.equalTo(coverImg.snp.bottom).offset(17.25)
+            make.top.equalTo(coverImgView.snp.bottom).offset(17.25)
             make.left.right.equalToSuperview()
             make.height.equalTo(0.5)
         }
