@@ -47,6 +47,14 @@ class MagazineInstructionCell: UITableViewCell {
     
 }
 
+// MARK: - Data
+extension MagazineInstructionCell {
+    public func setupData(entity: ArticleDetailModel) {
+        titleLabel.text = entity.title
+        authorLabel.text = entity.author
+    }
+}
+
 // MARK: - UI
 extension MagazineInstructionCell {
     private func setupUI() {

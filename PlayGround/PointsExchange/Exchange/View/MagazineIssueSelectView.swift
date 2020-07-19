@@ -139,7 +139,7 @@ extension MagazineIssueSelectView {
     @objc private func btnAction(sender: UIButton) {
         switch sender.tag {
         case 0:
-            print("取消")
+            hide()
             break
         case 1:
             print("确定")
@@ -150,11 +150,6 @@ extension MagazineIssueSelectView {
     }
     
     @objc private func hide() {
-//        UIView.animate(withDuration: 0.3, animations: { [weak self] () in
-//            self?.removeFromSuperview()
-//        }) { (complete) in
-//
-//        }
         self.removeFromSuperview()
 
     }

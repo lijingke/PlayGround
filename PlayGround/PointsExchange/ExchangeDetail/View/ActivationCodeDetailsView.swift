@@ -53,9 +53,18 @@ class ActivationCodeDetailsView: UIView {
         btn.titleLabel?.font = UIFont.regular(15)
         btn.backgroundColor = UIColor(hex: 0x5161F9)
         btn.layer.cornerRadius = 5
+        btn.addTarget(self, action: #selector(self.copyAction), for: .touchUpInside)
         return btn
     }()
     
+}
+
+// MARK: Event
+extension ActivationCodeDetailsView {
+    @objc private func copyAction() {
+        UIPasteboard.general.string = activationCode.text
+        Loading.showToastOnSuccess(with: "复制成功", to: UIApplication.shared.windows[0])
+    }
 }
 
 // MARK: - UI

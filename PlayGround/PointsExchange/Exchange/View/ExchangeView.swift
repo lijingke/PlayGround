@@ -12,6 +12,8 @@ class ExchangeView: UIView {
     
     // MARK: Property
     weak var delegate: ExchangeViewProtocol?
+    private var dataSource: [[ArticleDetailModel]]?
+    private var monthly: Int = 1
     
     // MARK: Life Cycle
     override init(frame: CGRect) {
@@ -68,6 +70,7 @@ class ExchangeView: UIView {
     
     lazy var segmentBar: SegmentBar = {
         let vc = SegmentBar()
+        vc.delegate = self
         return vc
     }()
     
@@ -95,6 +98,7 @@ class ExchangeView: UIView {
     
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
+        view.delegate = self
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.bounces = false
         view.isPagingEnabled = true
@@ -121,7 +125,6 @@ class ExchangeView: UIView {
         table.dataSource = self
         table.register(MonthlyTableViewCell.self, forCellReuseIdentifier: MonthlyTableViewCell.identifier)
         table.register(MagazineInstructionCell.self, forCellReuseIdentifier: MagazineInstructionCell.identifier)
-
         table.separatorStyle = .none
         return table
     }()
@@ -234,12 +237,22 @@ extension ExchangeView {
     }
 }
 
+// MARK: - Data
+extension ExchangeView {
+    public func setupData(dataSource: [[ArticleDetailModel]]) {
+        self.dataSource = dataSource
+        tableViewTwo.reloadData()
+    }
+}
+
 // MARK: - UITableViewDelegate
 extension ExchangeView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.tag == 2 && indexPath.row != 0 {
-            delegate?.jumpToMagazineDetailView()
+        if tableView.tag == 2 && indexPath.row > 0 {
+            if let entity = dataSource?[monthly][indexPath.row - 1] {
+                delegate?.jumpToMagazineDetailView(with: entity)
+            }
         }
     }
 }
@@ -251,7 +264,12 @@ extension ExchangeView: UITableViewDataSource {
         case 1:
             return 1
         case 2:
-            return 10
+            let month = monthly - 1
+            if month >= 0, let data = dataSource?[month] {
+                return data.count + 1
+            } else {
+                return 0
+            }
         default:
             return 0
         }
@@ -264,10 +282,14 @@ extension ExchangeView: UITableViewDataSource {
             return cell
         case 2:
             if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: MonthlyTableViewCell.identifier, for: indexPath)
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: MonthlyTableViewCell.identifier, for: indexPath) as? MonthlyTableViewCell else { return UITableViewCell() }
+                cell.delegate = self
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: MagazineInstructionCell.identifier, for: indexPath)
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: MagazineInstructionCell.identifier, for: indexPath) as? MagazineInstructionCell else { return UITableViewCell() }
+                
+                let entity = dataSource?[monthly][indexPath.row - 1]
+                cell.setupData(entity: entity ?? ArticleDetailModel())
                 return cell
             }
             
@@ -275,6 +297,29 @@ extension ExchangeView: UITableViewDataSource {
             return UITableViewCell()
         }
     }
-    
-    
+}
+
+// MARK: - MonthlyChooseProtocol
+extension ExchangeView: MonthlyChooseProtocol {
+    func monthDidSelected(_ month: MonthlyEntity) {
+        print(month)
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension ExchangeView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.isKind(of: UITableView.self) {
+            return
+        }
+        let value = scrollView.contentOffset.x / scrollView.bounds.size.width
+        segmentBar.setScrollValue(value: value)
+    }
+}
+
+// MARK: - SegmentBarDelegate
+extension ExchangeView: SegmentBarDelegate {
+    func segmentBarDidSelect(fromIndex: NSInteger) {
+        scrollView.setContentOffset(CGPoint(x: CGFloat(fromIndex) * scrollView.bounds.width, y: scrollView.contentOffset.y), animated: true)
+    }
 }

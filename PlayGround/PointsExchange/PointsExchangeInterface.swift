@@ -20,7 +20,7 @@ protocol ExchangeRecordsEventProtocol: NSObject {
 }
 
 protocol ExchangeViewProtocol: NSObject {
-    func jumpToMagazineDetailView()
+    func jumpToMagazineDetailView(with magazine: ArticleDetailModel)
     func exchangePoints()
 }
 

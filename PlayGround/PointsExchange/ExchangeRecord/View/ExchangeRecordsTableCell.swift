@@ -9,10 +9,7 @@
 import UIKit
 
 class ExchangeRecordsTableCell: UITableViewCell {
-    
-    // MARK: Property
-    public var copyAction: (()->())?
-    
+        
     // MARK: Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -88,15 +85,16 @@ class ExchangeRecordsTableCell: UITableViewCell {
         btn.setTitleColor(UIColor(hex: 0x5161F9), for: .normal)
         btn.titleLabel?.font = UIFont.regular(16)
         btn.setImage(UIImage(named: "copy"), for: .normal)
-        btn.addTarget(self, action: #selector(self.btnDidClicked), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(self.copyAction), for: .touchUpInside)
         return btn
     }()
 }
 
 // MARK: - Event
 extension ExchangeRecordsTableCell {
-    @objc private func btnDidClicked() {
-        copyAction?()
+    @objc private func copyAction() {
+        UIPasteboard.general.string = activationCode.text
+        Loading.showToastOnSuccess(with: "复制成功", to: UIApplication.shared.windows[0])
     }
 }
 

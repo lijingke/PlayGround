@@ -1,14 +1,21 @@
 //
-//  MagazineDetailViewController.swift
+//  ArticleDetailViewController.swift
 //  PlayGround
 //
-//  Created by 李京珂 on 2020/7/17.
+//  Created by 李京珂 on 2020/7/19.
 //  Copyright © 2020 李京珂. All rights reserved.
 //
 
 import UIKit
 
-class MagazineDetailViewController: UIViewController {
+class ArticleDetailViewController: UIViewController {
+    
+    // MARK: Property
+    public var entity: ArticleDetailModel? {
+        didSet {
+            mainView.setupData(entity: entity ?? ArticleDetailModel())
+        }
+    }
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +28,14 @@ class MagazineDetailViewController: UIViewController {
     }
     
     // MARK: Lazy Get
-    lazy var mainView: MagazineDetailView = {
-        let view = MagazineDetailView()
+    lazy var mainView: ArticleDetailView = {
+        let view = ArticleDetailView()
         return view
     }()
 }
 
 // MARK: - UI
-extension MagazineDetailViewController {
+extension ArticleDetailViewController {
     
     private func setupNavi() {
         navigationItem.title = "中华皮肤科杂志"

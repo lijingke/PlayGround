@@ -77,8 +77,9 @@ extension PointsRecordsTableSectionHeader {
         }
         foldBtn.snp.makeConstraints { (make) in
             make.centerY.equalTo(timeLabel)
-            make.right.equalToSuperview().offset(-33.5)
-            make.size.equalTo(CGSize(width: 18, height: 10))
+            make.right.equalToSuperview().offset(-33.5 + 9.5)
+//            make.size.equalTo(CGSize(width: 18, height: 10))
+            make.size.equalTo(CGSize(width: 37, height: 37))
         }
     }
 }

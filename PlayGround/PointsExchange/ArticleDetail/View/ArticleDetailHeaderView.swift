@@ -1,14 +1,21 @@
 //
-//  MagazineDetailHeaderView.swift
+//  ArticleDetailHeaderView.swift
 //  PlayGround
 //
-//  Created by 李京珂 on 2020/7/17.
+//  Created by 李京珂 on 2020/7/19.
 //  Copyright © 2020 李京珂. All rights reserved.
 //
 
 import UIKit
 
-class MagazineDetailHeaderView: UITableViewHeaderFooterView {
+class ArticleDetailHeaderView: UITableViewHeaderFooterView {
+    
+    // MARK: Property
+    public var title: String? {
+        didSet {
+            titleLabel.text = title
+        }
+    }
     
     // MARK: Life Cycle
     override init(reuseIdentifier: String?) {
@@ -23,7 +30,6 @@ class MagazineDetailHeaderView: UITableViewHeaderFooterView {
     // MARK: Lazy Get
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "重组人II型肿瘤坏死因子受体-抗体融合蛋白治疗中毒性表皮坏死松懈症的临床疗效观察"
         label.font = UIFont.medium(17)
         label.textColor = UIColor(hex: 0x333333)
         label.numberOfLines = 0
@@ -32,7 +38,7 @@ class MagazineDetailHeaderView: UITableViewHeaderFooterView {
 }
 
 // MARK: - UI
-extension MagazineDetailHeaderView {
+extension ArticleDetailHeaderView {
     private func setupUI() {
         contentView.backgroundColor = .white
         contentView.addSubview(titleLabel)

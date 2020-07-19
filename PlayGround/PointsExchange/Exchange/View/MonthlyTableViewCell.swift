@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol MonthlyChooseProtocol: NSObject {
+    func monthDidSelected(_ month: MonthlyEntity)
+}
+
 class MonthlyTableViewCell: UITableViewCell {
     
     // MARK: Property
     public var monthlyData: [MonthlyEntity] = []
+    public weak var delegate: MonthlyChooseProtocol?
     
     // MARK: Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -91,5 +96,6 @@ extension MonthlyTableViewCell: UICollectionViewDelegate {
         }
         monthlyData[indexPath.item].isSelected.toggle()
         collectionView.reloadData()
+        delegate?.monthDidSelected(monthlyData[indexPath.item])
     }
 }
