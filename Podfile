@@ -9,6 +9,7 @@ target 'PlayGround' do
   pod 'SnapKit'
   pod 'iOSPalette'
   pod 'MBProgressHUD'
+  pod 'SDWebImage'
 
   target 'PlayGroundTests' do
     inherit! :search_paths

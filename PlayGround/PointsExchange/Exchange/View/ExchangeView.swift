@@ -11,9 +11,10 @@ import UIKit
 class ExchangeView: UIView {
     
     // MARK: Property
-    weak var delegate: ExchangeViewProtocol?
-    private var dataSource: [[ArticleDetailModel]]?
+    public weak var delegate: ExchangeViewProtocol?
     private var monthly: Int = 1
+    private var isAnnual: Bool = false
+    private var dataSource: [[ArticleDetailModel]]?
     
     // MARK: Life Cycle
     override init(frame: CGRect) {
@@ -30,9 +31,11 @@ class ExchangeView: UIView {
     }
     
     // MARK: - Lazy Get
-    lazy var bgView: UIImageView = {
+    lazy var coverImageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "img")
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
         return view
     }()
     
@@ -151,7 +154,7 @@ class ExchangeView: UIView {
 extension ExchangeView {
     private func setupUI() {
         backgroundColor = .white
-        addSubview(bgView)
+        addSubview(coverImageView)
         addSubview(titleLabel)
         addSubview(requiredPoints)
         addSubview(chooseLine)
@@ -163,12 +166,12 @@ extension ExchangeView {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        bgView.snp.makeConstraints { (make) in
+        coverImageView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(snp.width).multipliedBy(0.533)
         }
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(bgView.snp.bottom).offset(20.5)
+            make.top.equalTo(coverImageView.snp.bottom).offset(20.5)
             make.left.equalToSuperview().offset(15)
         }
         requiredPoints.snp.makeConstraints { (make) in
@@ -239,6 +242,14 @@ extension ExchangeView {
 
 // MARK: - Data
 extension ExchangeView {
+    
+    public func setupMagazine(magazine: MagazineInfoEntity) {
+        coverImageView.sd_setImage(with: URL(string: magazine.coverURL ?? ""), placeholderImage: UIImage(named: "img"))
+        titleLabel.text = magazine.magazineTitle
+        requiredPoints.text = "\(magazine.needPoints ?? 0)积分"
+        isAnnual = magazine.isAnnual
+    }
+    
     public func setupData(dataSource: [[ArticleDetailModel]]) {
         self.dataSource = dataSource
         tableViewTwo.reloadData()
@@ -266,7 +277,7 @@ extension ExchangeView: UITableViewDataSource {
         case 2:
             let month = monthly - 1
             if month >= 0, let data = dataSource?[month] {
-                return data.count + 1
+                return isAnnual ? data.count + 1 : data.count
             } else {
                 return 0
             }
@@ -281,14 +292,14 @@ extension ExchangeView: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: ExchangeInstructionsCell.identifier, for: indexPath)
             return cell
         case 2:
-            if indexPath.row == 0 {
+            if indexPath.row == 0 && isAnnual == true {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: MonthlyTableViewCell.identifier, for: indexPath) as? MonthlyTableViewCell else { return UITableViewCell() }
                 cell.delegate = self
                 return cell
             } else {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: MagazineInstructionCell.identifier, for: indexPath) as? MagazineInstructionCell else { return UITableViewCell() }
-                
-                let entity = dataSource?[monthly][indexPath.row - 1]
+                let indexRow = isAnnual ? indexPath.row - 1 : indexPath.row
+                let entity = dataSource?[monthly][indexRow]
                 cell.setupData(entity: entity ?? ArticleDetailModel())
                 return cell
             }

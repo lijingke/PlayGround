@@ -10,6 +10,13 @@ import UIKit
 
 class ExchangeViewController: UIViewController {
     
+    // MARK: Property
+    public var entity: MagazineInfoEntity? {
+        didSet {
+            mainView.setupMagazine(magazine: entity!)
+        }
+    }
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PointRewardInfoTableCell: UITableViewCell {
+    
+    // MARK: Property
+    private var magazineInfo: MagazineInfoEntity?
     
     // MARK: Lift Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -84,6 +88,21 @@ class PointRewardInfoTableCell: UITableViewCell {
         btn.layer.cornerRadius = 17
         return btn
     }()
+}
+
+// MARK: - Data
+extension PointRewardInfoTableCell {
+    public func setupData(magazine: MagazineInfoEntity) {
+        coverImgView.sd_setImage(with: URL(string: magazine.coverURL ?? ""), placeholderImage: UIImage(named: "img2"))
+        goodsName.text = magazine.magazineTitle
+        requiredPoints.text = "\(magazine.needPoints ?? 0)积分"
+        if let num = magazine.exchangeNum, num > 0 {
+            exchangeTimes.text = "已兑换：\(num) 人次"
+            exchangeTimesBg.isHidden = false
+        } else {
+            exchangeTimesBg.isHidden = true
+        }
+    }
 }
 
 // MARK: - UI

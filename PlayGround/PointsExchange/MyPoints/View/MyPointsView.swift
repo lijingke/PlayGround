@@ -12,6 +12,7 @@ class MyPointsView: UIView {
     
     // MARK: Property
     public weak var delegate: MyPointsViewProtocol?
+    private var dataSource: [MagazineInfoEntity] = []
     
     // MARK: - Lift Cycle
     override init(frame: CGRect) {
@@ -137,6 +138,14 @@ extension MyPointsView {
     }
 }
 
+// MARK: - Data
+extension MyPointsView {
+    public func setupData(dataSource: [MagazineInfoEntity]) {
+        self.dataSource = dataSource
+        tableView.reloadData()
+    }
+}
+
 // MARK: - UITableViewDelegate
 extension MyPointsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -145,20 +154,23 @@ extension MyPointsView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.jumpToExchangeView()
+        let data = dataSource[indexPath.row]
+        delegate?.jumpToExchangeView(with: data)
     }
 }
 
 // MARK: - UITableViewDataSource
 extension MyPointsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PointRewardInfoTableCell.identifier, for: indexPath) as? PointRewardInfoTableCell else {
             return UITableViewCell()
         }
+        let data = dataSource[indexPath.row]
+        cell.setupData(magazine: data)
         return cell
     }
     

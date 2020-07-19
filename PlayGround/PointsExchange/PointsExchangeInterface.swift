@@ -11,7 +11,7 @@ import Foundation
 protocol MyPointsViewProtocol: NSObject {
     func jumpToPointRecords()
     func jumpToExchangeRecords()
-    func jumpToExchangeView()
+    func jumpToExchangeView(with magazineInfo: MagazineInfoEntity)
 }
 
 protocol ExchangeRecordsEventProtocol: NSObject {

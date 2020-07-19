@@ -70,6 +70,7 @@ extension MonthlyTableViewCell {
             make.height.equalTo(0.5)
         }
     }
+    
 }
 
 // MARK: - UICollectionViewDataSource

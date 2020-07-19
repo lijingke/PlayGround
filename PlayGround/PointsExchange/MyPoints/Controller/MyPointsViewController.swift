@@ -14,6 +14,7 @@ class MyPointsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        creatFakeData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +66,28 @@ extension MyPointsViewController {
     }
 }
 
+// MARK: - Data
+extension MyPointsViewController {
+    private func creatFakeData() {
+        var dataSource: [MagazineInfoEntity] = []
+        for i in 0..<5 {
+            var entity = MagazineInfoEntity()
+            if i % 2 == 0 {
+                entity.isAnnual = true
+            } else {
+                entity.isAnnual = false
+            }
+            entity.magazineTitle = entity.isAnnual ? "中华皮肤科杂志电子版激活码（年）" : "中华皮肤科杂志电子版激活码（月）"
+            entity.needPoints = 3000
+            entity.exchangeNum = i
+            entity.coverURL = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595150773583&di=3defd5ed66c3b383bb56f13ab4e2ea44&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201604%2F28%2F20160428183154_vhrJa.jpeg"
+            dataSource.append(entity)
+        }
+        mainView.setupData(dataSource: dataSource)
+    }
+}
+
+// MARK: - MyPointsViewProtocol
 extension MyPointsViewController: MyPointsViewProtocol {
     
     func jumpToPointRecords() {
@@ -77,8 +100,9 @@ extension MyPointsViewController: MyPointsViewProtocol {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func jumpToExchangeView() {
+    func jumpToExchangeView(with magazineInfo: MagazineInfoEntity) {
         let vc = ExchangeViewController()
+        vc.entity = magazineInfo
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -99,6 +99,7 @@
 		54F3FDCA24C419B0008FBEC2 /* ArticleDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3FDC924C419B0008FBEC2 /* ArticleDetailTableCell.swift */; };
 		54F3FDCC24C419DF008FBEC2 /* ArticleDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3FDCB24C419DF008FBEC2 /* ArticleDetailHeaderView.swift */; };
 		54F3FDCE24C41A0A008FBEC2 /* ArticleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3FDCD24C41A0A008FBEC2 /* ArticleDetailModel.swift */; };
+		54F3FDD024C41B0F008FBEC2 /* MagazineInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3FDCF24C41B0F008FBEC2 /* MagazineInfoEntity.swift */; };
 		5DF1B401C153ABA806FBAA90 /* Pods_PlayGroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CA5A83AEC9657FA2534EC /* Pods_PlayGroundTests.framework */; };
 		655777B836A78B42F9C54F3A /* Pods_PlayGround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC41275CC98A35466AD5FB50 /* Pods_PlayGround.framework */; };
 		6BC5DDF30904EBAD23C1ECC0 /* Pods_PlayGroundUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147B9B5DD5C87783BDACA28 /* Pods_PlayGroundUITests.framework */; };
@@ -228,6 +229,7 @@
 		54F3FDC924C419B0008FBEC2 /* ArticleDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailTableCell.swift; sourceTree = "<group>"; };
 		54F3FDCB24C419DF008FBEC2 /* ArticleDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailHeaderView.swift; sourceTree = "<group>"; };
 		54F3FDCD24C41A0A008FBEC2 /* ArticleDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailModel.swift; sourceTree = "<group>"; };
+		54F3FDCF24C41B0F008FBEC2 /* MagazineInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineInfoEntity.swift; sourceTree = "<group>"; };
 		9038EA275955FC193E64DDD7 /* Pods-PlayGroundUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGroundUITests/Pods-PlayGroundUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92DF5226BD0A7BC4A0E5D6CF /* Pods-PlayGroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGroundTests/Pods-PlayGroundTests.debug.xcconfig"; sourceTree = "<group>"; };
 		94A467FB20D589FDC5B39A0E /* Pods-PlayGround-PlayGroundUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-PlayGroundUITests.release.xcconfig"; path = "Target Support Files/Pods-PlayGround-PlayGroundUITests/Pods-PlayGround-PlayGroundUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -730,6 +732,7 @@
 		54C02E6524C1CB780056D8EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				54F3FDCF24C41B0F008FBEC2 /* MagazineInfoEntity.swift */,
 				5430661C24C1D6B20053500C /* MonthlyEntity.swift */,
 			);
 			path = Model;
@@ -1080,6 +1083,7 @@
 				54BF0E4024BD8DFC00629874 /* HXSTimer.swift in Sources */,
 				54A21A7924C2D0BA003F97BE /* ChooseView.swift in Sources */,
 				54BF0E3224BD8DFC00629874 /* DoctorInfoTableViewCell.swift in Sources */,
+				54F3FDD024C41B0F008FBEC2 /* MagazineInfoEntity.swift in Sources */,
 				54C12C4924C09FF300EC8C3F /* PointsRecordsTableSectionHeader.swift in Sources */,
 				54F3FDC824C4197C008FBEC2 /* ArticleDetailView.swift in Sources */,
 				549E8E1124C19ABE0071DFCD /* MagazineInstructionCell.swift in Sources */,
