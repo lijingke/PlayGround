@@ -147,7 +147,6 @@ class ExchangeView: UIView {
         btn.setBackgroundImage(UIImage.getImage(from: UIColor(hex: 0x5161F9)), for: .normal)
         btn.setBackgroundImage(UIImage.getImage(from: UIColor(hex: 0xD5D9FF)), for: .disabled)
         btn.titleLabel?.font = UIFont.regular(17)
-        
         btn.addTarget(self, action: #selector(self.exchangeAction), for: .touchUpInside)
         return btn
     }()
@@ -248,7 +247,12 @@ extension ExchangeView {
 extension ExchangeView {
     
     public func setupMagazine(magazine: MagazineInfoEntity) {
-        coverImageView.sd_setImage(with: URL(string: magazine.coverURL ?? ""), placeholderImage: UIImage(named: "img"))
+                
+        coverImageView.sd_setImage(with: URL(string: magazine.coverURL ?? ""), placeholderImage: UIImage(named: "img")) { (image, error, type, url) in
+            let cropImage = image?.crop(ratio: 1.875, cropType: .bottom)
+            self.coverImageView.image = cropImage
+        }
+        
         titleLabel.text = magazine.magazineTitle
         
         let attribute = NSMutableAttributedString()
