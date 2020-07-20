@@ -142,6 +142,7 @@ class ExchangeView: UIView {
     lazy var exchangeBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setTitle("立即兑换", for: .normal)
+        btn.setTitle("暂无库存", for: .disabled)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = UIColor(hex: 0x5161F9)
         btn.titleLabel?.font = UIFont.regular(17)

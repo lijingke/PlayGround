@@ -75,7 +75,10 @@ extension PointsRecordsViewController {
                 
                 pointsArray.append(pointsEntity)
             }
-            entity.pointsArray = pointsArray
+            
+            if i != 3 {
+                entity.pointsArray = pointsArray
+            }
             dataArray.append(entity)
         }
         mainView.setupData(dataSource: dataArray)

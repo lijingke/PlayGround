@@ -43,7 +43,7 @@ class PointsRecordsTableSectionHeader: UITableViewHeaderFooterView {
     
     lazy var foldBtn: UIButton = {
         let btn = UIButton(type: .custom)
-        btn.setImage(UIImage(named: "up"), for: .normal)
+        btn.setImage(UIImage(named: "unfold"), for: .normal)
         btn.addTarget(self, action: #selector(self.tapAction), for: .touchUpInside)
         return btn
     }()
@@ -53,12 +53,12 @@ extension PointsRecordsTableSectionHeader {
     @objc private func tapAction() {
         if entity.isOpen {
             UIView.animate(withDuration: 0.3) {
-                self.foldBtn.transform = self.foldBtn.transform.rotated(by: .pi / 2)
+                self.foldBtn.transform = self.foldBtn.transform.rotated(by: -.pi / 2)
             }
             closeBlock?(entity.section)
         } else {
             UIView.animate(withDuration: 0.3) {
-                self.foldBtn.transform = self.foldBtn.transform.rotated(by: -.pi / 2)
+                self.foldBtn.transform = self.foldBtn.transform.rotated(by: .pi / 2)
             }
             openBlock?(entity.section)
         }
@@ -69,17 +69,17 @@ extension PointsRecordsTableSectionHeader {
 // MARK: - UI
 extension PointsRecordsTableSectionHeader {
     private func setupUI() {
-        contentView.addSubview(timeLabel)
         contentView.addSubview(foldBtn)
-        timeLabel.snp.makeConstraints { (make) in
-            make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(31)
-        }
+        contentView.addSubview(timeLabel)
+
         foldBtn.snp.makeConstraints { (make) in
-            make.centerY.equalTo(timeLabel)
-            make.right.equalToSuperview().offset(-33.5 + 9.5)
-//            make.size.equalTo(CGSize(width: 18, height: 10))
+            make.left.equalToSuperview().offset(19)
+            make.centerY.equalToSuperview()
             make.size.equalTo(CGSize(width: 37, height: 37))
+        }
+        timeLabel.snp.makeConstraints { (make) in
+            make.centerY.equalTo(foldBtn)
+            make.left.equalTo(foldBtn.snp.right)
         }
     }
 }
@@ -96,7 +96,7 @@ extension PointsRecordsTableSectionHeader {
             
         } else {
             UIView.animate(withDuration: 0.3) {
-                self.foldBtn.transform = self.foldBtn.transform.rotated(by: .pi / 2)
+                self.foldBtn.transform = self.foldBtn.transform.rotated(by: -.pi / 2)
             }
         }
         

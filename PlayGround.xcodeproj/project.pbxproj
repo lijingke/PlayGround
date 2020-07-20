@@ -10,6 +10,8 @@
 		5412946624C138AB000B5920 /* ExchangeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412946524C138AB000B5920 /* ExchangeDetailViewController.swift */; };
 		5412946824C13906000B5920 /* ExchangeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412946724C13906000B5920 /* ExchangeDetailView.swift */; };
 		5430661D24C1D6B20053500C /* MonthlyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430661C24C1D6B20053500C /* MonthlyEntity.swift */; };
+		54394A9C24C5471C00CBDFD3 /* PointsRecordsTableSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54394A9B24C5471C00CBDFD3 /* PointsRecordsTableSectionFooter.swift */; };
+		54394A9E24C548E500CBDFD3 /* PointsNoRecordsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54394A9D24C548E500CBDFD3 /* PointsNoRecordsTableCell.swift */; };
 		545456FF24C04B8600F44769 /* MyPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545456FE24C04B8600F44769 /* MyPointsViewController.swift */; };
 		5454570124C04BAA00F44769 /* MyPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454570024C04BAA00F44769 /* MyPointsView.swift */; };
 		5454570324C04BFB00F44769 /* PointRewardInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454570224C04BFB00F44769 /* PointRewardInfoTableCell.swift */; };
@@ -131,6 +133,8 @@
 		5412946524C138AB000B5920 /* ExchangeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailViewController.swift; sourceTree = "<group>"; };
 		5412946724C13906000B5920 /* ExchangeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailView.swift; sourceTree = "<group>"; };
 		5430661C24C1D6B20053500C /* MonthlyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyEntity.swift; sourceTree = "<group>"; };
+		54394A9B24C5471C00CBDFD3 /* PointsRecordsTableSectionFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRecordsTableSectionFooter.swift; sourceTree = "<group>"; };
+		54394A9D24C548E500CBDFD3 /* PointsNoRecordsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsNoRecordsTableCell.swift; sourceTree = "<group>"; };
 		545456FE24C04B8600F44769 /* MyPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsViewController.swift; sourceTree = "<group>"; };
 		5454570024C04BAA00F44769 /* MyPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsView.swift; sourceTree = "<group>"; };
 		5454570224C04BFB00F44769 /* PointRewardInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRewardInfoTableCell.swift; sourceTree = "<group>"; };
@@ -614,8 +618,10 @@
 			children = (
 				54C12C4024C0946400EC8C3F /* PointsRecordsView.swift */,
 				54C12C4424C09A5600EC8C3F /* PointsRecordsTableCell.swift */,
+				54394A9D24C548E500CBDFD3 /* PointsNoRecordsTableCell.swift */,
 				54C12C4624C09D3800EC8C3F /* PointsRecordsTableHeaderView.swift */,
 				54C12C4824C09FF300EC8C3F /* PointsRecordsTableSectionHeader.swift */,
+				54394A9B24C5471C00CBDFD3 /* PointsRecordsTableSectionFooter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1042,6 +1048,7 @@
 				54C97E0324C05A2900E6B987 /* LMJVerticalScrollText.m in Sources */,
 				54BF0E1D24BD8DFC00629874 /* EvaluationResultViewController.swift in Sources */,
 				54BF0E3424BD8DFC00629874 /* DoctorInfoCollectionViewCell.swift in Sources */,
+				54394A9C24C5471C00CBDFD3 /* PointsRecordsTableSectionFooter.swift in Sources */,
 				5412946624C138AB000B5920 /* ExchangeDetailViewController.swift in Sources */,
 				54BF0E1F24BD8DFC00629874 /* FinalEvaluationResultEntity.swift in Sources */,
 				54BF0E2C24BD8DFC00629874 /* DenyLoginViewController.swift in Sources */,
@@ -1095,6 +1102,7 @@
 				54BF0DAF24BD8CE400629874 /* AppDelegate.swift in Sources */,
 				54BF0E3D24BD8DFC00629874 /* UITableViewCell+Extension.swift in Sources */,
 				54BF0E2124BD8DFC00629874 /* EvaluationResultView.swift in Sources */,
+				54394A9E24C548E500CBDFD3 /* PointsNoRecordsTableCell.swift in Sources */,
 				54BF0E2424BD8DFC00629874 /* FinalEvaluationFootView.swift in Sources */,
 				54F3FDCA24C419B0008FBEC2 /* ArticleDetailTableCell.swift in Sources */,
 				54C97E0424C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m in Sources */,

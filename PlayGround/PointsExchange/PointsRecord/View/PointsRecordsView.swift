@@ -37,7 +37,9 @@ class PointsRecordsView: UIView {
         table.dataSource = self
         table.separatorStyle = .none
         table.register(PointsRecordsTableCell.self, forCellReuseIdentifier: PointsRecordsTableCell.identifier)
+        table.register(PointsNoRecordsTableCell.self, forCellReuseIdentifier: PointsNoRecordsTableCell.identifier)
         table.register(PointsRecordsTableSectionHeader.self, forHeaderFooterViewReuseIdentifier: PointsRecordsTableSectionHeader.identifer)
+        table.register(PointsRecordsTableSectionFooter.self, forHeaderFooterViewReuseIdentifier: PointsRecordsTableSectionFooter.identifer)
         return table
     }()
     
@@ -94,6 +96,9 @@ extension PointsRecordsView {
             indexArray.append(indexPath)
         }
         dataSource[section] = model
+        if indexArray.count == 0 {
+            indexArray.append(IndexPath(row: 0, section: section))
+        }
         tableView.insertRows(at: indexArray, with: .fade)
     }
     
@@ -106,6 +111,9 @@ extension PointsRecordsView {
             indexArray.append(indexPath)
         }
         dataSource[section] = model
+        if indexArray.count == 0 {
+            indexArray.append(IndexPath(row: 0, section: section))
+        }
         tableView.deleteRows(at: indexArray, with: .fade)
     }
 }
@@ -140,7 +148,8 @@ extension PointsRecordsView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
+        guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: PointsRecordsTableSectionFooter.identifer) as? PointsRecordsTableSectionFooter else { return UIView() }
+        return footer
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -148,7 +157,7 @@ extension PointsRecordsView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return CGFloat.leastNormalMagnitude
+        return dataSource[section].isOpen ? CGFloat.leastNormalMagnitude : 10
     }
 }
 
@@ -162,19 +171,27 @@ extension PointsRecordsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let data = dataSource[section]
         if data.isOpen {
-            return dataSource[section].pointsArray.count
+            let recordsNum = dataSource[section].pointsArray.count
+            return recordsNum > 0 ? recordsNum : 1
         } else {
             return 0
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PointsRecordsTableCell.identifier, for: indexPath) as? PointsRecordsTableCell else { return UITableViewCell() }
-        let pointsEntity = dataSource[indexPath.section].pointsArray[indexPath.row]
-        cell.setupData(pointsEntity)
-        return cell
+        
+        let recordsNum = dataSource[indexPath.section].pointsArray.count
+        
+        if recordsNum > 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PointsRecordsTableCell.identifier, for: indexPath) as? PointsRecordsTableCell else { return UITableViewCell() }
+            let pointsEntity = dataSource[indexPath.section].pointsArray[indexPath.row]
+            cell.setupData(pointsEntity)
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PointsNoRecordsTableCell.identifier, for: indexPath) as? PointsNoRecordsTableCell else { return UITableViewCell() }
+            return cell
+        }
+
     }
-    
     
 }
