@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540EBB0424C5787B00DF6E0E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540EBB0324C5787B00DF6E0E /* UIImage+Extension.swift */; };
 		5412946624C138AB000B5920 /* ExchangeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412946524C138AB000B5920 /* ExchangeDetailViewController.swift */; };
 		5412946824C13906000B5920 /* ExchangeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412946724C13906000B5920 /* ExchangeDetailView.swift */; };
 		5430661D24C1D6B20053500C /* MonthlyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430661C24C1D6B20053500C /* MonthlyEntity.swift */; };
@@ -130,6 +131,7 @@
 		17F0470E62A43D75D4F0EE2E /* Pods-PlayGroundUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGroundUITests.release.xcconfig"; path = "Target Support Files/Pods-PlayGroundUITests/Pods-PlayGroundUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C313A6EB3FDD4647CED642A /* Pods-PlayGround-PlayGroundUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-PlayGroundUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround-PlayGroundUITests/Pods-PlayGround-PlayGroundUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D9CA5A83AEC9657FA2534EC /* Pods_PlayGroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayGroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		540EBB0324C5787B00DF6E0E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5412946524C138AB000B5920 /* ExchangeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailViewController.swift; sourceTree = "<group>"; };
 		5412946724C13906000B5920 /* ExchangeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailView.swift; sourceTree = "<group>"; };
 		5430661C24C1D6B20053500C /* MonthlyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyEntity.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 		54BF0E0424BD8DFB00629874 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				540EBB0324C5787B00DF6E0E /* UIImage+Extension.swift */,
 				54BF0E0524BD8DFB00629874 /* UIFont+Extension.swift */,
 				54BF0E0624BD8DFB00629874 /* UIColor+Extension.swift */,
 				54BF0E0724BD8DFB00629874 /* Int+Extension.swift */,
@@ -1083,6 +1086,7 @@
 				54BF0E3624BD8DFC00629874 /* UIColor+Extension.swift in Sources */,
 				54BF0E1E24BD8DFC00629874 /* FinalEvaluationViewController.swift in Sources */,
 				54BF0E3024BD8DFC00629874 /* DoctorInfoTableFooterView.swift in Sources */,
+				540EBB0424C5787B00DF6E0E /* UIImage+Extension.swift in Sources */,
 				5491C12224C15698000A2812 /* ExchangeInstructionsView.swift in Sources */,
 				54C12C5124C0AE9900EC8C3F /* ExchangeRecordsTableCell.swift in Sources */,
 				54BF0E4524BD8DFC00629874 /* QuestionnaireHeadView.swift in Sources */,

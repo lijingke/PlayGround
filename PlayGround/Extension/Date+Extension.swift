@@ -9,16 +9,16 @@
 import Foundation
 
 fileprivate let dateFormatter: DateFormatter = {
-  let dateFmt = DateFormatter()
-  dateFmt.timeZone = TimeZone.current
-  return dateFmt
+    let dateFmt = DateFormatter()
+    dateFmt.timeZone = TimeZone.current
+    return dateFmt
 }()
 
 extension Date {
-  func toString(_ format: String? = "yyyy-MM-dd") -> String {
-    if let fmt = format {
-      dateFormatter.dateFormat = fmt
+    func toString(_ format: String? = "yyyy-MM-dd") -> String {
+        if let fmt = format {
+            dateFormatter.dateFormat = fmt
+        }
+        return dateFormatter.string(from: self)
     }
-    return dateFormatter.string(from: self)
-  }
 }

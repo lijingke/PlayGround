@@ -22,3 +22,7 @@ protocol ExchangeViewProtocol: NSObject {
     func jumpToMagazineDetailView(with magazine: ArticleDetailModel)
     func exchangePoints()
 }
+
+protocol ExchangeRecordProtocol: NSObject {
+    func jumpToExchangeDetail(with record: MonthlyPointsEntity.PointsChangeEntity)
+}

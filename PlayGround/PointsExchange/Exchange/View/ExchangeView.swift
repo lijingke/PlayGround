@@ -144,8 +144,10 @@ class ExchangeView: UIView {
         btn.setTitle("立即兑换", for: .normal)
         btn.setTitle("暂无库存", for: .disabled)
         btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = UIColor(hex: 0x5161F9)
+        btn.setBackgroundImage(UIImage.getImage(from: UIColor(hex: 0x5161F9)), for: .normal)
+        btn.setBackgroundImage(UIImage.getImage(from: UIColor(hex: 0xD5D9FF)), for: .disabled)
         btn.titleLabel?.font = UIFont.regular(17)
+        
         btn.addTarget(self, action: #selector(self.exchangeAction), for: .touchUpInside)
         return btn
     }()

@@ -12,6 +12,7 @@ class PointsRecordsView: UIView {
     
     // MARK: Property
     private var dataSource: [MonthlyPointsEntity] = []
+    public weak var delegate: ExchangeRecordProtocol?
     
     // MARK: Life Cycle
     override init(frame: CGRect) {
@@ -88,14 +89,16 @@ extension PointsRecordsView {
     }
     
     private func openSection(section: Int) {
+        
         var model = dataSource[section]
         model.isOpen.toggle()
+        dataSource[section] = model
+
         var indexArray: [IndexPath] = []
         for i in 0..<model.pointsArray.count {
             let indexPath = IndexPath(row: i, section: section)
             indexArray.append(indexPath)
         }
-        dataSource[section] = model
         if indexArray.count == 0 {
             indexArray.append(IndexPath(row: 0, section: section))
         }
@@ -103,17 +106,20 @@ extension PointsRecordsView {
     }
     
     private func closeSection(section: Int) {
+        
         var model = dataSource[section]
         model.isOpen.toggle()
+        dataSource[section] = model
+
         var indexArray: [IndexPath] = []
         for i in 0..<model.pointsArray.count {
             let indexPath = IndexPath(row: i, section: section)
             indexArray.append(indexPath)
         }
-        dataSource[section] = model
         if indexArray.count == 0 {
             indexArray.append(IndexPath(row: 0, section: section))
         }
+        
         tableView.deleteRows(at: indexArray, with: .fade)
     }
 }
@@ -158,6 +164,16 @@ extension PointsRecordsView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return dataSource[section].isOpen ? CGFloat.leastNormalMagnitude : 10
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let records = dataSource[indexPath.section].pointsArray
+        if records.count > 0 {
+            let record = records[indexPath.row]
+            if record.title == "积分兑换" {
+                delegate?.jumpToExchangeDetail(with: record)
+            }
+        }
     }
 }
 
