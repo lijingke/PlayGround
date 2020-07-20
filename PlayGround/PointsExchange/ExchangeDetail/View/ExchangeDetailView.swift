@@ -81,7 +81,10 @@ extension ExchangeDetailView {
 // MARK: - Data
 extension ExchangeDetailView {
     public func setupData(_ data: ExchangeRecordModel) {
-        coverImgView.sd_setImage(with: URL(string: data.coverURL ?? ""), placeholderImage: UIImage(named: "img"))
+        coverImgView.sd_setImage(with: URL(string: data.coverURL ?? ""), placeholderImage: UIImage(named: "img")) { [weak self] (image, _, _, _) in
+            let cropImage = image?.crop(ratio: 1.875, cropType: .top)
+            self?.coverImgView.image = cropImage
+        }
         titleLabel.text = data.title
         codeDetailsView.setupData(data: data)
     }

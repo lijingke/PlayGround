@@ -248,9 +248,9 @@ extension ExchangeView {
     
     public func setupMagazine(magazine: MagazineInfoEntity) {
                 
-        coverImageView.sd_setImage(with: URL(string: magazine.coverURL ?? ""), placeholderImage: UIImage(named: "img")) { (image, error, type, url) in
-            let cropImage = image?.crop(ratio: 1.875, cropType: .bottom)
-            self.coverImageView.image = cropImage
+        coverImageView.sd_setImage(with: URL(string: magazine.coverURL ?? ""), placeholderImage: UIImage(named: "img")) { [weak self] (image, _, _, _) in
+            let cropImage = image?.crop(ratio: 1.875, cropType: .top)
+            self?.coverImageView.image = cropImage
         }
         
         titleLabel.text = magazine.magazineTitle
