@@ -15,6 +15,7 @@ class ExchangeView: UIView {
     private var monthly: Int = 1
     private var isAnnual: Bool = false
     private var dataSource: [[ArticleDetailModel]]?
+    private var monthlyData: [MonthlyEntity]?
     
     // MARK: Life Cycle
     override init(frame: CGRect) {
@@ -246,12 +247,24 @@ extension ExchangeView {
     public func setupMagazine(magazine: MagazineInfoEntity) {
         coverImageView.sd_setImage(with: URL(string: magazine.coverURL ?? ""), placeholderImage: UIImage(named: "img"))
         titleLabel.text = magazine.magazineTitle
-        requiredPoints.text = "\(magazine.needPoints ?? 0)积分"
+        
+        let attribute = NSMutableAttributedString()
+        let needPoints = NSMutableAttributedString(string: "\(magazine.needPoints ?? 0)积分   ")
+        needPoints.addAttributes([.font: UIFont.regular(17)!, .foregroundColor: UIColor(hex: 0xF0A044)], range: NSRange(location: 0, length: needPoints.length))
+        attribute.append(needPoints)
+        let priceString = NSMutableAttributedString(string: "¥250")
+        priceString.addAttributes([.strikethroughStyle: NSNumber(value: 1), .font: UIFont.regular(17)!, .foregroundColor: UIColor(hex: 0xA4A4A4)], range: NSRange(location: 0, length: priceString.length))
+        attribute.append(priceString)
+        requiredPoints.attributedText = attribute
+        
         isAnnual = magazine.isAnnual
     }
     
-    public func setupData(dataSource: [[ArticleDetailModel]]) {
+    public func setupData(dataSource: [[ArticleDetailModel]], monthlyData: [MonthlyEntity] = []) {
         self.dataSource = dataSource
+        if isAnnual {
+            self.monthlyData = monthlyData
+        }
         tableViewTwo.reloadData()
     }
 }
@@ -296,6 +309,7 @@ extension ExchangeView: UITableViewDataSource {
             if indexPath.row == 0 && isAnnual == true {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: MonthlyTableViewCell.identifier, for: indexPath) as? MonthlyTableViewCell else { return UITableViewCell() }
                 cell.delegate = self
+                cell.setupData(self.monthlyData ?? [])
                 return cell
             } else {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: MagazineInstructionCell.identifier, for: indexPath) as? MagazineInstructionCell else { return UITableViewCell() }
@@ -314,7 +328,18 @@ extension ExchangeView: UITableViewDataSource {
 // MARK: - MonthlyChooseProtocol
 extension ExchangeView: MonthlyChooseProtocol {
     func monthDidSelected(_ month: MonthlyEntity) {
-        print(month)
+       
+        for (index, item) in self.monthlyData!.enumerated() {
+            if item.id == month.id {
+                self.monthlyData![index].isSelected.toggle()
+            } else {
+                self.monthlyData![index].isSelected = false
+            }
+        }
+        Loading.showLoading(to: self)
+        tableViewTwo.reloadData()
+        Loading.hideLoading(from: self)
+        Loading.showToastOnSuccess(to: self)
     }
 }
 

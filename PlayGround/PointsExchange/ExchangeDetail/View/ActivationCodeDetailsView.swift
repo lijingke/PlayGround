@@ -62,8 +62,16 @@ class ActivationCodeDetailsView: UIView {
 // MARK: Event
 extension ActivationCodeDetailsView {
     @objc private func copyAction() {
-        UIPasteboard.general.string = activationCode.text
-        Loading.showToastOnSuccess(with: "复制成功", to: UIApplication.shared.windows[0])
+        let content = activationCode.text ?? ""
+        let reg = "[a-zA-Z0-9]+"
+        let regex = try? NSRegularExpression(pattern: reg)
+        
+        if let match = regex?.firstMatch(in: content, options: [], range: NSRange(location: 0, length: content.count)) {
+            let matchString = (content as NSString).substring(with: match.range)
+            UIPasteboard.general.string = matchString
+            
+            Loading.showToastOnSuccess(with: "复制成功", to: UIApplication.shared.windows[0])
+        }
     }
 }
 

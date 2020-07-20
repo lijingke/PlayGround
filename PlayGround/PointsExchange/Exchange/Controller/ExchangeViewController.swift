@@ -49,7 +49,14 @@ extension ExchangeViewController {
             }
             dataSource.append(monthData)
         }
-        mainView.setupData(dataSource: dataSource)
+        
+        var data: [MonthlyEntity] = []
+        for i in 1..<13 {
+            let month = MonthlyEntity(id: "\(i)", title: "\(i)期", isSelected: false)
+            data.append(month)
+        }
+        
+        mainView.setupData(dataSource: dataSource, monthlyData: data)
     }
 }
 

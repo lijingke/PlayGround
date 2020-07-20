@@ -63,23 +63,21 @@ class SegmentBar: UIView {
     public func setScrollValue(value : CGFloat) {
         let distance = previewBtn.center.x - instructionsBtn.center.x
         let centerX = instructionsBtn.center.x
-//        slideLine.center.x = centerX + value * distance
+        //        slideLine.center.x = centerX + value * distance
         slideLine.center = CGPoint(x: centerX + value * distance, y: slideLine.center.y)
         
         slideLine.setNeedsUpdateConstraints()
         slideLine.updateConstraintsIfNeeded()
         slideLine.needsUpdateConstraints()
-
+        
         if value > 0.5 {
             instructionsBtn.isSelected = false
             previewBtn.isSelected = true
-            
             previewBtn.titleLabel?.font = UIFont.medium(17)
             instructionsBtn.titleLabel?.font = UIFont.regular(17)
         } else {
             instructionsBtn.isSelected = true
             previewBtn.isSelected = false
-            
             previewBtn.titleLabel?.font = UIFont.regular(17)
             instructionsBtn.titleLabel?.font = UIFont.medium(17)
         }
@@ -104,11 +102,11 @@ extension SegmentBar {
             make.top.right.equalToSuperview()
             make.bottom.width.equalTo(instructionsBtn)
         }
-//        slideLine.snp.makeConstraints { (make) in
-//            make.centerX.equalTo(instructionsBtn)
-//            make.bottom.equalTo(bottomLine.snp.top)
-//            make.size.equalTo(CGSize(width: 90, height: 2))
-//        }
+        //        slideLine.snp.makeConstraints { (make) in
+        //            make.centerX.equalTo(instructionsBtn)
+        //            make.bottom.equalTo(bottomLine.snp.top)
+        //            make.size.equalTo(CGSize(width: 90, height: 2))
+        //        }
         
         // 避免滑动时造成setFrame与Autolayout冲突
         let originX = (kScreenWidth / 2 - 90) / 2
@@ -124,25 +122,6 @@ extension SegmentBar {
 // MARK: - Event
 extension SegmentBar {
     @objc private func btnAction(sender: UIButton) {
-        
-        for subview in subviews {
-            if subview.isKind(of: UIButton.self) {
-                let btn = subview as! UIButton
-                btn.isSelected = false
-                if subview == sender {
-                    btn.isSelected = true
-                    btn.titleLabel?.font = UIFont.medium(17)
-//                    UIView.animate(withDuration: 0.2) {
-//                        self.slideLine.center.x = subview.center.x
-//                        self.slideLine.setNeedsLayout()
-//                        self.slideLine.layoutIfNeeded()
-//                    }
-//                    
-                } else {
-                    btn.titleLabel?.font = UIFont.regular(17)
-                }
-            }
-        }
         delegate?.segmentBarDidSelect(fromIndex: sender.tag)
     }
 }

@@ -64,7 +64,6 @@ class PointRewardInfoTableCell: UITableViewCell {
     
     lazy var goodsName: UILabel = {
         let label = UILabel()
-        label.text = "中华皮肤科杂志电子版激活码（年）"
         label.textColor = UIColor(hex: 0x33333)
         label.font = UIFont.regular(17)
         label.numberOfLines = 0
@@ -94,7 +93,16 @@ class PointRewardInfoTableCell: UITableViewCell {
 extension PointRewardInfoTableCell {
     public func setupData(magazine: MagazineInfoEntity) {
         coverImgView.sd_setImage(with: URL(string: magazine.coverURL ?? ""), placeholderImage: UIImage(named: "img2"))
-        goodsName.text = magazine.magazineTitle
+        
+        let attribute = NSMutableAttributedString()
+        let titleName = NSMutableAttributedString(string: magazine.magazineTitle ?? "")
+        titleName.addAttributes([.font: UIFont.regular(17)!, .foregroundColor: UIColor(hex: 0x33333)], range: NSRange(location: 0, length: titleName.length))
+        attribute.append(titleName)
+        let priceString = NSMutableAttributedString(string: "¥250")
+        priceString.addAttributes([.strikethroughStyle: NSNumber(value: 1), .font: UIFont.regular(15)!, .foregroundColor: UIColor(hex: 0x9A9C9F)], range: NSRange(location: 0, length: priceString.length))
+        attribute.append(priceString)
+        goodsName.attributedText = attribute
+        
         requiredPoints.text = "\(magazine.needPoints ?? 0)积分"
         if let num = magazine.exchangeNum, num > 0 {
             exchangeTimes.text = "已兑换：\(num) 人次"
@@ -102,6 +110,7 @@ extension PointRewardInfoTableCell {
         } else {
             exchangeTimesBg.isHidden = true
         }
+        
     }
 }
 
@@ -152,7 +161,7 @@ extension PointRewardInfoTableCell {
         
         coverImgView.setNeedsLayout()
         coverImgView.layoutIfNeeded()
-
+        
     }
     
 }

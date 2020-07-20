@@ -22,12 +22,6 @@ class MonthlyTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
-        var data: [MonthlyEntity] = []
-        for i in 0..<11 {
-            let month = MonthlyEntity(id: "", title: "\(i)期", isSelected: false)
-            data.append(month)
-        }
-        monthlyData = data
     }
     
     required init?(coder: NSCoder) {
@@ -54,6 +48,14 @@ class MonthlyTableViewCell: UITableViewCell {
         view.backgroundColor = UIColor(hex: 0xD5D5D5)
         return view
     }()
+}
+
+// MARK: - Data
+extension MonthlyTableViewCell {
+    public func setupData(_ data: [MonthlyEntity]) {
+        self.monthlyData = data
+        collectionView.reloadData()
+    }
 }
 
 // MARK: - UI
