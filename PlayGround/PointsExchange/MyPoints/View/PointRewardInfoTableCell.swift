@@ -99,7 +99,7 @@ extension PointRewardInfoTableCell {
         titleName.addAttributes([.font: UIFont.regular(17)!, .foregroundColor: UIColor(hex: 0x33333)], range: NSRange(location: 0, length: titleName.length))
         attribute.append(titleName)
         let priceString = NSMutableAttributedString(string: "¥250")
-        priceString.addAttributes([.strikethroughStyle: NSNumber(value: 1), .font: UIFont.regular(15)!, .foregroundColor: UIColor(hex: 0x9A9C9F)], range: NSRange(location: 0, length: priceString.length))
+        priceString.addAttributes([.strikethroughStyle: 1, .font: UIFont.regular(15)!, .foregroundColor: UIColor(hex: 0x9A9C9F)], range: NSRange(location: 0, length: priceString.length))
         attribute.append(priceString)
         goodsName.attributedText = attribute
         

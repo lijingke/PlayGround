@@ -10,10 +10,16 @@ import UIKit
 
 class MagazineIssueSelectView: UIView {
     
+    // MARK: Property
+    private var yearsData: [GoodsSpecificationsInfoEntity] = []
+    private var monthsData: [GoodsSpecificationsInfoEntity] = []
+    private var isAnnual = false
+    
     // MARK: Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        creatFackData()
     }
     
     required init?(coder: NSCoder) {
@@ -73,11 +79,92 @@ class MagazineIssueSelectView: UIView {
     
 }
 
+extension MagazineIssueSelectView {
+    
+    private func creatFackData() {
+        
+        var dataSource: [GoodsSpecificationsInfoEntity] = []
+        for i in 2019...2023 {
+            for j in 1...12 {
+                var entity = GoodsSpecificationsInfoEntity()
+                entity.year = i
+                entity.number = j
+                dataSource.append(entity)
+            }
+        }
+        
+        setupData(dataSource, isAnnual: false)
+        
+    }
+    
+    private func setupData(_ dataSource: [GoodsSpecificationsInfoEntity], isAnnual: Bool) {
+        
+        self.isAnnual = isAnnual
+        
+        var data: [GoodsSpecificationsInfoEntity] = []
+        
+        let operationSet = NSMutableSet()
+        
+        for operationObj in dataSource {
+            operationSet.add(operationObj.year ?? 0)
+        }
+        
+        operationSet.enumerateObjects { (obj, _) in
+            let filterArray = dataSource.filter{$0.year == obj as? Int}
+            var entity = GoodsSpecificationsInfoEntity()
+            entity.year = obj as? Int
+            entity.subArray = filterArray
+            data.append(entity)
+        }
+        
+        let sortData = data.sorted(by: {$0.year ?? 0 > $1.year ?? 0})
+        
+        self.yearsData = sortData
+        self.monthsData = self.yearsData.first?.subArray ?? []
+        
+        self.pickerView.selectRow(0, inComponent: 1, animated: true)
+        self.pickerView(self.pickerView, didSelectRow: 0, inComponent: 1)
+        
+        pickerView.reloadAllComponents()
+    
+    }
+    
+}
+
 // MARK: - UIPickerViewDelegate
 extension MagazineIssueSelectView: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "YY是个大SB"
+        
+        if isAnnual {
+            let year = "\(yearsData[row].year ?? 0)年"
+            return year
+        } else {
+            
+            switch component {
+            case 0:
+                let year = "\(yearsData[row].year ?? 0)年"
+                return year
+            case 1:
+                let month = "第\(monthsData[row].number ?? 0)期"
+                return month
+            default:
+                return nil
+            }
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch component {
+        case 0:
+            monthsData = yearsData[row].subArray ?? []
+            pickerView.selectRow(0, inComponent: 1, animated: true)
+            pickerView.reloadAllComponents()
+        case 1:
+            let entity = monthsData[row]
+        default:
+            break
+        }
     }
 }
 
@@ -85,11 +172,22 @@ extension MagazineIssueSelectView: UIPickerViewDelegate {
 extension MagazineIssueSelectView: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return isAnnual ? 1 : 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        if isAnnual {
+            return yearsData.count
+        } else {
+            switch component {
+            case 0:
+                return yearsData.count
+            case 1:
+                return monthsData.count
+            default:
+                return 0
+            }
+        }
     }
     
     
@@ -151,6 +249,6 @@ extension MagazineIssueSelectView {
     
     @objc private func hide() {
         self.removeFromSuperview()
-
+        
     }
 }
