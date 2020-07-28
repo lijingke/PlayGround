@@ -18,6 +18,7 @@ struct GoodsSpecificationsInfoEntity {
     // enum{"annual":annual, "monthly":monthly}
     var type: String?
     var creatTime: Int?
-    
+    var isSelected: Bool = false
+
     var subArray: [GoodsSpecificationsInfoEntity]?
 }

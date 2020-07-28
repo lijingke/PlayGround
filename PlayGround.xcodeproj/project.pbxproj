@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		540EBB0424C5787B00DF6E0E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540EBB0324C5787B00DF6E0E /* UIImage+Extension.swift */; };
+		54128C4924CFF47C00949251 /* ExchangeViewStyle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54128C4824CFF47C00949251 /* ExchangeViewStyle2.swift */; };
+		54128C4B24CFF51A00949251 /* ExchangeTableHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54128C4A24CFF51A00949251 /* ExchangeTableHeadView.swift */; };
+		54128C4D24D0241800949251 /* SegmentClickBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54128C4C24D0241800949251 /* SegmentClickBar.swift */; };
 		5412946624C138AB000B5920 /* ExchangeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412946524C138AB000B5920 /* ExchangeDetailViewController.swift */; };
 		5412946824C13906000B5920 /* ExchangeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412946724C13906000B5920 /* ExchangeDetailView.swift */; };
 		541B7F7924C92C3700D79C9A /* GoodsSpecificationsInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541B7F7824C92C3700D79C9A /* GoodsSpecificationsInfoEntity.swift */; };
-		5430661D24C1D6B20053500C /* MonthlyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430661C24C1D6B20053500C /* MonthlyEntity.swift */; };
 		54394A9C24C5471C00CBDFD3 /* PointsRecordsTableSectionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54394A9B24C5471C00CBDFD3 /* PointsRecordsTableSectionFooter.swift */; };
 		54394A9E24C548E500CBDFD3 /* PointsNoRecordsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54394A9D24C548E500CBDFD3 /* PointsNoRecordsTableCell.swift */; };
 		545456FF24C04B8600F44769 /* MyPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545456FE24C04B8600F44769 /* MyPointsViewController.swift */; };
@@ -133,10 +135,12 @@
 		2C313A6EB3FDD4647CED642A /* Pods-PlayGround-PlayGroundUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayGround-PlayGroundUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlayGround-PlayGroundUITests/Pods-PlayGround-PlayGroundUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D9CA5A83AEC9657FA2534EC /* Pods_PlayGroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayGroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		540EBB0324C5787B00DF6E0E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		54128C4824CFF47C00949251 /* ExchangeViewStyle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewStyle2.swift; sourceTree = "<group>"; };
+		54128C4A24CFF51A00949251 /* ExchangeTableHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTableHeadView.swift; sourceTree = "<group>"; };
+		54128C4C24D0241800949251 /* SegmentClickBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentClickBar.swift; sourceTree = "<group>"; };
 		5412946524C138AB000B5920 /* ExchangeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailViewController.swift; sourceTree = "<group>"; };
 		5412946724C13906000B5920 /* ExchangeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDetailView.swift; sourceTree = "<group>"; };
 		541B7F7824C92C3700D79C9A /* GoodsSpecificationsInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsSpecificationsInfoEntity.swift; sourceTree = "<group>"; };
-		5430661C24C1D6B20053500C /* MonthlyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyEntity.swift; sourceTree = "<group>"; };
 		54394A9B24C5471C00CBDFD3 /* PointsRecordsTableSectionFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRecordsTableSectionFooter.swift; sourceTree = "<group>"; };
 		54394A9D24C548E500CBDFD3 /* PointsNoRecordsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsNoRecordsTableCell.swift; sourceTree = "<group>"; };
 		545456FE24C04B8600F44769 /* MyPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointsViewController.swift; sourceTree = "<group>"; };
@@ -731,6 +735,9 @@
 			isa = PBXGroup;
 			children = (
 				549E8E0424C17A240071DFCD /* ExchangeView.swift */,
+				54128C4824CFF47C00949251 /* ExchangeViewStyle2.swift */,
+				54128C4C24D0241800949251 /* SegmentClickBar.swift */,
+				54128C4A24CFF51A00949251 /* ExchangeTableHeadView.swift */,
 				54A21A7824C2D0BA003F97BE /* ChooseView.swift */,
 				54A21A7624C2D08D003F97BE /* SegmentBar.swift */,
 				549E8E0824C18FAC0071DFCD /* ExchangeInstructionsCell.swift */,
@@ -747,7 +754,6 @@
 			isa = PBXGroup;
 			children = (
 				54F3FDCF24C41B0F008FBEC2 /* MagazineInfoEntity.swift */,
-				5430661C24C1D6B20053500C /* MonthlyEntity.swift */,
 				541B7F7824C92C3700D79C9A /* GoodsSpecificationsInfoEntity.swift */,
 			);
 			path = Model;
@@ -1031,6 +1037,8 @@
 				5454570124C04BAA00F44769 /* MyPointsView.swift in Sources */,
 				54BF0E1C24BD8DFC00629874 /* FinalEvaluationInterface.swift in Sources */,
 				549E8E0F24C195120071DFCD /* MonthlyTableViewCell.swift in Sources */,
+				54128C4B24CFF51A00949251 /* ExchangeTableHeadView.swift in Sources */,
+				54128C4924CFF47C00949251 /* ExchangeViewStyle2.swift in Sources */,
 				54BF0E2A24BD8DFC00629874 /* FinalEvaluationQuesCell.swift in Sources */,
 				54A21A7724C2D08D003F97BE /* SegmentBar.swift in Sources */,
 				54BF0E2924BD8DFC00629874 /* FinalEvaluationView.swift in Sources */,
@@ -1069,7 +1077,6 @@
 				54BF0E2324BD8DFC00629874 /* FinalEvaluationJudgeAnswerCell.swift in Sources */,
 				54BF0E3824BD8DFC00629874 /* Date+Extension.swift in Sources */,
 				54BF0E2E24BD8DFC00629874 /* DoctorLeftViewController.swift in Sources */,
-				5430661D24C1D6B20053500C /* MonthlyEntity.swift in Sources */,
 				54BF0E3524BD8DFC00629874 /* UIFont+Extension.swift in Sources */,
 				5412946824C13906000B5920 /* ExchangeDetailView.swift in Sources */,
 				54BF0E4224BD8DFC00629874 /* QuestionEntity.swift in Sources */,
@@ -1084,6 +1091,7 @@
 				54BF0E3E24BD8DFC00629874 /* CountDownTimer.swift in Sources */,
 				54BF0E2724BD8DFC00629874 /* TextAlertView.swift in Sources */,
 				54BF0E2224BD8DFC00629874 /* FinalEvaluationChoiceAnswerCell.swift in Sources */,
+				54128C4D24D0241800949251 /* SegmentClickBar.swift in Sources */,
 				54BF0E3924BD8DFC00629874 /* UIButton+Extension.swift in Sources */,
 				54C12C3F24C0941500EC8C3F /* PointsRecordsViewController.swift in Sources */,
 				54BF0E4124BD8DFC00629874 /* QuestionnaireController.swift in Sources */,

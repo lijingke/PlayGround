@@ -54,8 +54,8 @@ extension MonthlyCollectionCell {
         }
     }
     
-    public func setupData(_ data: MonthlyEntity) {
-        titleLabel.text = data.title
+    public func setupData(_ data: GoodsSpecificationsInfoEntity) {
+        titleLabel.text = "\(data.number ?? 0)期"
         selectStatus = data.isSelected
     }
 }

@@ -9,13 +9,13 @@
 import UIKit
 
 protocol MonthlyChooseProtocol: NSObject {
-    func monthDidSelected(_ month: MonthlyEntity)
+    func monthDidSelected(_ month: GoodsSpecificationsInfoEntity)
 }
 
 class MonthlyTableViewCell: UITableViewCell {
     
     // MARK: Property
-    public var monthlyData: [MonthlyEntity] = []
+    public var monthlyData: [GoodsSpecificationsInfoEntity] = []
     public weak var delegate: MonthlyChooseProtocol?
     
     // MARK: Life Cycle
@@ -52,7 +52,7 @@ class MonthlyTableViewCell: UITableViewCell {
 
 // MARK: - Data
 extension MonthlyTableViewCell {
-    public func setupData(_ data: [MonthlyEntity]) {
+    public func setupData(_ data: [GoodsSpecificationsInfoEntity]) {
         self.monthlyData = data
         collectionView.reloadData()
     }

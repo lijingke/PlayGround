@@ -30,8 +30,8 @@ class ExchangeViewController: UIViewController {
     }
     
     // MARK: Lazy Get
-    lazy var mainView: ExchangeView = {
-        let view = ExchangeView()
+    lazy var mainView: ExchangeViewStyle2 = {
+        let view = ExchangeViewStyle2()
         view.delegate = self
         return view
     }()
@@ -40,6 +40,23 @@ class ExchangeViewController: UIViewController {
 
 // MARK: - Data
 extension ExchangeViewController {
+    
+    public func creatFackSelectData() -> [GoodsSpecificationsInfoEntity] {
+        
+        var dataSource: [GoodsSpecificationsInfoEntity] = []
+        for i in 2019...2023 {
+            for j in 1...12 {
+                var entity = GoodsSpecificationsInfoEntity()
+                entity.id = String(i * j)
+                entity.year = i
+                entity.number = j
+                dataSource.append(entity)
+            }
+        }
+        return dataSource
+    }
+
+    
     private func creatFakeData() {
         var dataSource: [[ArticleDetailModel]] = []
         for _ in 0..<12 {
@@ -50,11 +67,7 @@ extension ExchangeViewController {
             dataSource.append(monthData)
         }
         
-        var data: [MonthlyEntity] = []
-        for i in 1..<13 {
-            let month = MonthlyEntity(id: "\(i)", title: "\(i)期", isSelected: false)
-            data.append(month)
-        }
+        let data = creatFackSelectData()
         
         mainView.setupData(dataSource: dataSource, monthlyData: data)
     }

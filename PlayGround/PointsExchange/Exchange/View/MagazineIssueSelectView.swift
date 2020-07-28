@@ -8,18 +8,26 @@
 
 import UIKit
 
+protocol MagazineIssueSelectProtocol: NSObjectProtocol {
+    func selectSpecifications(entity: GoodsSpecificationsInfoEntity)
+}
+
 class MagazineIssueSelectView: UIView {
     
     // MARK: Property
+    public weak var delegate: MagazineIssueSelectProtocol?
+    
     private var yearsData: [GoodsSpecificationsInfoEntity] = []
     private var monthsData: [GoodsSpecificationsInfoEntity] = []
     private var isAnnual = false
+    private var selectedEntity: GoodsSpecificationsInfoEntity?
+    
+    private var selectedRows = [Int?](repeating: nil, count: 2)
     
     // MARK: Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        creatFackData()
     }
     
     required init?(coder: NSCoder) {
@@ -81,23 +89,7 @@ class MagazineIssueSelectView: UIView {
 
 extension MagazineIssueSelectView {
     
-    private func creatFackData() {
-        
-        var dataSource: [GoodsSpecificationsInfoEntity] = []
-        for i in 2019...2023 {
-            for j in 1...12 {
-                var entity = GoodsSpecificationsInfoEntity()
-                entity.year = i
-                entity.number = j
-                dataSource.append(entity)
-            }
-        }
-        
-        setupData(dataSource, isAnnual: false)
-        
-    }
-    
-    private func setupData(_ dataSource: [GoodsSpecificationsInfoEntity], isAnnual: Bool) {
+    public func setupData(_ dataSource: [GoodsSpecificationsInfoEntity], isAnnual: Bool) {
         
         self.isAnnual = isAnnual
         
@@ -122,11 +114,25 @@ extension MagazineIssueSelectView {
         self.yearsData = sortData
         self.monthsData = self.yearsData.first?.subArray ?? []
         
-        self.pickerView.selectRow(0, inComponent: 1, animated: true)
-        self.pickerView(self.pickerView, didSelectRow: 0, inComponent: 1)
+        self.pickerView.selectRow(0, inComponent: isAnnual == true ? 0 : 1, animated: true)
+        self.pickerView(self.pickerView, didSelectRow: 0, inComponent:  isAnnual == true ? 0 : 1)
+        
+        if isAnnual == false {
+            self.pickerView.selectRow(3, inComponent: 0, animated: true)
+            self.pickerView.selectRow(3, inComponent: 1, animated: true)
+        }
+        
+        if let firstColumnRow = selectedRows[0] {
+            self.pickerView.selectRow(firstColumnRow, inComponent: 0, animated: true)
+        }
+        if let secondColumnRow = selectedRows[1] {
+            self.pickerView.selectRow(secondColumnRow, inComponent: 1, animated: true)
+        }
         
         pickerView.reloadAllComponents()
-    
+        
+        confirmButton.sendActions(for: .touchUpInside)
+        
     }
     
 }
@@ -155,16 +161,29 @@ extension MagazineIssueSelectView: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch component {
-        case 0:
-            monthsData = yearsData[row].subArray ?? []
-            pickerView.selectRow(0, inComponent: 1, animated: true)
-            pickerView.reloadAllComponents()
-        case 1:
-            let entity = monthsData[row]
-        default:
-            break
+        
+        selectedRows[component] = row
+        
+        if isAnnual {
+            let entity = yearsData[row]
+            self.selectedEntity = entity
+        } else {
+            
+            switch component {
+            case 0:
+                monthsData = yearsData[row].subArray ?? []
+                pickerView.selectRow(0, inComponent: 1, animated: true)
+                self.pickerView(self.pickerView, didSelectRow: 0, inComponent: 1)
+                pickerView.reloadAllComponents()
+            case 1:
+                let entity = monthsData[row]
+                self.selectedEntity = entity
+            default:
+                break
+            }
+            
         }
+        
     }
 }
 
@@ -240,8 +259,10 @@ extension MagazineIssueSelectView {
             hide()
             break
         case 1:
-            print("确定")
-            break
+            if let entity = self.selectedEntity {
+                self.delegate?.selectSpecifications(entity: entity)
+                cancelBtn.sendActions(for: .touchUpInside)
+            }
         default:
             break
         }

@@ -26,7 +26,6 @@ class ChooseView: UIView {
     // MARK: Lazy Get
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "2019年全年"
         label.font = UIFont.regular(17)
         label.textColor = UIColor(hex: 0x5161F9)
         return label
@@ -40,6 +39,13 @@ class ChooseView: UIView {
     
     @objc private func tapAction() {
         clickAction?()
+    }
+}
+
+// MARK: - Data
+extension ChooseView {
+    public func setupData(_ title: String) {
+        titleLabel.text = title
     }
 }
 

@@ -15,7 +15,7 @@ class ExchangeView: UIView {
     private var monthly: Int = 1
     private var isAnnual: Bool = false
     private var dataSource: [[ArticleDetailModel]]?
-    private var monthlyData: [MonthlyEntity]?
+    private var monthlyData: [GoodsSpecificationsInfoEntity]?
     
     // MARK: Life Cycle
     override init(frame: CGRect) {
@@ -24,6 +24,7 @@ class ExchangeView: UIView {
     }
     
     override func layoutSubviews() {
+        tabScrollView.contentSize = tableContentView.frame.size
         scrollView.contentSize = contentView.frame.size
     }
     
@@ -91,6 +92,7 @@ class ExchangeView: UIView {
     
     lazy var selectView: MagazineIssueSelectView = {
         let view = MagazineIssueSelectView()
+        view.delegate = self
         return view
     }()
     
@@ -100,7 +102,7 @@ class ExchangeView: UIView {
         return view
     }()
     
-    lazy var scrollView: UIScrollView = {
+    lazy var tabScrollView: UIScrollView = {
         let view = UIScrollView()
         view.delegate = self
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -108,6 +110,7 @@ class ExchangeView: UIView {
         view.isPagingEnabled = true
         view.backgroundColor = .white
         view.showsHorizontalScrollIndicator = false
+        view.tag = 1
         return view
     }()
     
@@ -133,9 +136,27 @@ class ExchangeView: UIView {
         return table
     }()
     
+    lazy var tableContentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
     lazy var contentView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
+        return view
+    }()
+    
+    lazy var scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.delegate = self
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.bounces = false
+        view.backgroundColor = .white
+        view.showsHorizontalScrollIndicator = false
+        view.showsVerticalScrollIndicator = false
+        view.tag = 0
         return view
     }()
     
@@ -153,21 +174,50 @@ class ExchangeView: UIView {
     
 }
 
+// MARK: - MagazineIssueSelectProtocol
+extension ExchangeView: MagazineIssueSelectProtocol {
+    func selectSpecifications(entity: GoodsSpecificationsInfoEntity) {
+        var title = "\(entity.year ?? 0)年"
+        if let num = entity.number {
+            title.append(contentsOf: " 第\(num)期")
+        }
+        
+        if isAnnual, let months = entity.subArray{
+            self.monthlyData = months
+            self.tableViewTwo.reloadData()
+        }
+        chooseBtn.setupData(title)
+    }
+}
+
 // MARK: - UI
 extension ExchangeView {
     private func setupUI() {
         backgroundColor = .white
-        addSubview(coverImageView)
-        addSubview(titleLabel)
-        addSubview(requiredPoints)
-        addSubview(chooseLine)
-        addSubview(chooseLabel)
-        addSubview(chooseBtn)
-        addSubview(separatorLine)
-        addSubview(segmentBar)
-        addSubview(exchangeBtn)
         addSubview(scrollView)
+        addSubview(exchangeBtn)
+
+        scrollView.snp.makeConstraints { (make) in
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalTo(exchangeBtn.snp.top)
+        }
+        exchangeBtn.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+            make.height.equalTo(45)
+        }
+        
         scrollView.addSubview(contentView)
+                
+        contentView.addSubview(coverImageView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(requiredPoints)
+        contentView.addSubview(chooseLine)
+        contentView.addSubview(chooseLabel)
+        contentView.addSubview(chooseBtn)
+        contentView.addSubview(separatorLine)
+        contentView.addSubview(segmentBar)
+        contentView.addSubview(tabScrollView)
         
         coverImageView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
@@ -205,34 +255,37 @@ extension ExchangeView {
             make.left.right.equalToSuperview()
             make.height.equalTo(45)
         }
-        scrollView.snp.makeConstraints { (make) in
+        
+        tabScrollView.snp.makeConstraints { (make) in
             make.top.equalTo(segmentBar.snp.bottom)
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(exchangeBtn.snp.top)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(322)
         }
-        contentView.snp.makeConstraints { (make) in
+        
+        tabScrollView.addSubview(tableContentView)
+        tableContentView.snp.makeConstraints { (make) in
             make.width.equalTo(kScreenWidth * 2)
             make.height.equalToSuperview()
         }
-        
-        contentView.addSubview(tableViewOne)
-        contentView.addSubview(tableViewTwo)
-        
+
+        tableContentView.addSubview(tableViewOne)
+        tableContentView.addSubview(tableViewTwo)
         tableViewOne.snp.makeConstraints { (make) in
             make.top.left.bottom.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.5)
         }
-        
+
         tableViewTwo.snp.makeConstraints { (make) in
             make.top.right.bottom.equalToSuperview()
             make.width.equalTo(tableViewOne)
         }
         
-        exchangeBtn.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
-            make.height.equalTo(45)
+        contentView.snp.makeConstraints { (make) in
+            make.width.equalToSuperview()
         }
+
+        
     }
 }
 
@@ -267,8 +320,9 @@ extension ExchangeView {
         isAnnual = magazine.isAnnual
     }
     
-    public func setupData(dataSource: [[ArticleDetailModel]], monthlyData: [MonthlyEntity] = []) {
+    public func setupData(dataSource: [[ArticleDetailModel]], monthlyData: [GoodsSpecificationsInfoEntity] = []) {
         self.dataSource = dataSource
+        selectView.setupData(monthlyData, isAnnual: isAnnual)
         if isAnnual {
             self.monthlyData = monthlyData
         }
@@ -291,6 +345,7 @@ extension ExchangeView: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 extension ExchangeView: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView.tag {
         case 1:
@@ -334,7 +389,7 @@ extension ExchangeView: UITableViewDataSource {
 
 // MARK: - MonthlyChooseProtocol
 extension ExchangeView: MonthlyChooseProtocol {
-    func monthDidSelected(_ month: MonthlyEntity) {
+    func monthDidSelected(_ month: GoodsSpecificationsInfoEntity) {
        
         for (index, item) in self.monthlyData!.enumerated() {
             if item.id == month.id {
@@ -343,6 +398,9 @@ extension ExchangeView: MonthlyChooseProtocol {
                 self.monthlyData![index].isSelected = false
             }
         }
+        
+        print(month)
+        
         Loading.showLoading(to: self)
         tableViewTwo.reloadData()
         Loading.hideLoading(from: self)
@@ -354,16 +412,26 @@ extension ExchangeView: MonthlyChooseProtocol {
 extension ExchangeView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.isKind(of: UITableView.self) {
+            if self.scrollView.contentOffset.y == 0 {
+                let offsetY = scrollView.contentOffset.y
+                if offsetY > 0 {
+                    let bottomOffset = CGPoint(x: 0, y: self.scrollView.contentSize.height - self.scrollView.bounds.size.height)
+                    self.scrollView.setContentOffset(bottomOffset, animated: true)
+                }
+            }
             return
         }
-        let value = scrollView.contentOffset.x / scrollView.bounds.size.width
-        segmentBar.setScrollValue(value: value)
+        if scrollView.tag == 1 {
+            let value = scrollView.contentOffset.x / scrollView.bounds.size.width
+            segmentBar.setScrollValue(value: value)
+        }
+        
     }
 }
 
 // MARK: - SegmentBarDelegate
 extension ExchangeView: SegmentBarDelegate {
     func segmentBarDidSelect(fromIndex: NSInteger) {
-        scrollView.setContentOffset(CGPoint(x: CGFloat(fromIndex) * scrollView.bounds.width, y: scrollView.contentOffset.y), animated: true)
+        tabScrollView.setContentOffset(CGPoint(x: CGFloat(fromIndex) * tabScrollView.bounds.width, y: tabScrollView.contentOffset.y), animated: true)
     }
 }
