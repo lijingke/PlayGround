@@ -1,5 +1,5 @@
 //
-//  AidsQuesResultViewController.swift
+//  QuestionnaireResultViewController.swift
 //  PlayGround
 //
 //  Created by 李京珂 on 2020/8/12.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AidsQuesResultViewController: UIViewController {
+class QuestionnaireResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = []
@@ -18,7 +18,7 @@ class AidsQuesResultViewController: UIViewController {
     }
     
     private func setupUI() {
-        navigationItem.title = "梅毒防治知识调查问卷"
+        navigationItem.title = "知晓率调查"
         view.backgroundColor = .white
         view.addSubview(mainView)
         mainView.snp.makeConstraints { (make) in
@@ -33,7 +33,7 @@ class AidsQuesResultViewController: UIViewController {
     
 }
 
-extension AidsQuesResultViewController {
+extension QuestionnaireResultViewController {
     private func creatData() {
         var dataSource: [QuestionEntity] = []
         for _ in 0..<10 {

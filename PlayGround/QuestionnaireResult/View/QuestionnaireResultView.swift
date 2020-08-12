@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AidsQuesResultView: UIView {
+class QuestionnaireResultView: UIView {
     
     // MARK: - Property
     public var dataSource: [QuestionEntity] = []
@@ -31,6 +31,7 @@ class AidsQuesResultView: UIView {
     lazy var segmentBar: ResultSegmentBar = {
         let bar = ResultSegmentBar()
         bar.delegate = self
+        bar.setScrollValue(value: 0)
         return bar
     }()
     
@@ -39,6 +40,7 @@ class AidsQuesResultView: UIView {
         view.bounces = false
         view.isPagingEnabled = true
         view.delegate = self
+        view.showsHorizontalScrollIndicator = false
         return view
     }()
     
@@ -70,10 +72,15 @@ class AidsQuesResultView: UIView {
         return table
     }()
 
-    lazy var headView: QuestionnaireHeadView = {
-        let view = QuestionnaireHeadView()
+    lazy var syphilisHeadView: SyphilisQuesHeadView = {
+        let view = SyphilisQuesHeadView()
         return view
     }()
+    
+    lazy var aidsHeadView: AidsQuesHeadView = {
+           let view = AidsQuesHeadView()
+           return view
+       }()
     
     lazy var submitBtn: UIButton = {
         let btn = UIButton(type: .custom)
@@ -84,7 +91,7 @@ class AidsQuesResultView: UIView {
 }
 
 // MARK: - UI && Data
-extension AidsQuesResultView {
+extension QuestionnaireResultView {
     
     private func setupUI() {
         addSubview(segmentBar)
@@ -92,6 +99,7 @@ extension AidsQuesResultView {
         addSubview(submitBtn)
         scrollView.addSubview(contentView)
         contentView.addSubview(syphilisTableView)
+        contentView.addSubview(aidsTableView)
 
         segmentBar.snp.makeConstraints { (make) in
             make.left.top.right.equalToSuperview()
@@ -106,9 +114,12 @@ extension AidsQuesResultView {
             make.width.equalTo(kScreenWidth * 2)
             make.height.equalToSuperview()
         }
-        contentView.setNeedsLayout()
         syphilisTableView.snp.makeConstraints { (make) in
             make.top.left.bottom.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.5)
+        }
+        aidsTableView.snp.makeConstraints { (make) in
+            make.top.right.bottom.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.5)
         }
         submitBtn.snp.makeConstraints { (make) in
@@ -118,30 +129,40 @@ extension AidsQuesResultView {
             make.height.equalTo(50)
         }
         
-        let height = headView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-        var frame = self.headView.frame
-        frame.size.height = height
-        headView.frame = frame
-        headView.setNeedsLayout()
-        syphilisTableView.tableHeaderView = headView
+        let sHeight = syphilisHeadView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        var sFrame = self.syphilisHeadView.frame
+        sFrame.size.height = sHeight
+        syphilisHeadView.frame = sFrame
+        syphilisHeadView.setNeedsLayout()
+        syphilisTableView.tableHeaderView = syphilisHeadView
         syphilisTableView.tableFooterView = UIView(frame: .zero)
+        
+        let aHeight = aidsHeadView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        var aFrame = self.aidsHeadView.frame
+        aFrame.size.height = aHeight
+        aidsHeadView.frame = aFrame
+        aidsHeadView.setNeedsLayout()
+        aidsTableView.tableHeaderView = aidsHeadView
+        aidsTableView.tableFooterView = UIView(frame: .zero)
+        
     }
     
     public func setupData(_ dataSource: [QuestionEntity]) {
         self.dataSource = dataSource
         let wrongCount = dataSource.filter({($0.answers?.contains(where: {$0.status == .wrong}) ?? false)}).count
-        headView.setupData(status: .fail, allCount: dataSource.count, wrongCount: wrongCount)
+        syphilisHeadView.setupData(status: .fail, allCount: dataSource.count, wrongCount: wrongCount)
+        aidsHeadView.setupData(status: .pass, allCount: 0, wrongCount: 0)
         syphilisTableView.reloadData()
     }
 }
 
 // MARK: - UITableViewDelegate
-extension AidsQuesResultView: UITableViewDelegate {
+extension QuestionnaireResultView: UITableViewDelegate {
     
 }
 
 // MARK: - UITableViewDataSource
-extension AidsQuesResultView: UITableViewDataSource {
+extension QuestionnaireResultView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -155,14 +176,14 @@ extension AidsQuesResultView: UITableViewDataSource {
 }
 
 // MARK: - SegmentBarDelegate
-extension AidsQuesResultView: ResultSegmentBarDelegate {
+extension QuestionnaireResultView: ResultSegmentBarDelegate {
     func segmentBarDidSelect(fromIndex: NSInteger) {
         scrollView.setContentOffset(CGPoint(x: CGFloat(fromIndex) * scrollView.bounds.width, y: scrollView.contentOffset.y), animated: true)
     }
 }
 
 // MARK: - UIScrollViewDelegate
-extension AidsQuesResultView: UIScrollViewDelegate {
+extension QuestionnaireResultView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.isKind(of: UITableView.self) {
             return

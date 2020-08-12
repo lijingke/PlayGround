@@ -99,9 +99,11 @@
 		54C97E0224C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C97DFD24C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.m */; };
 		54C97E0324C05A2900E6B987 /* LMJVerticalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C97DFF24C05A2900E6B987 /* LMJVerticalScrollText.m */; };
 		54C97E0424C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C97E0124C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m */; };
-		54C9FB6A24E3CC090057A03F /* AidsQuesResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9FB6924E3CC090057A03F /* AidsQuesResultViewController.swift */; };
-		54C9FB6C24E3CC4D0057A03F /* AidsQuesResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9FB6B24E3CC4D0057A03F /* AidsQuesResultView.swift */; };
+		54C9FB6A24E3CC090057A03F /* QuestionnaireResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9FB6924E3CC090057A03F /* QuestionnaireResultViewController.swift */; };
+		54C9FB6C24E3CC4D0057A03F /* QuestionnaireResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9FB6B24E3CC4D0057A03F /* QuestionnaireResultView.swift */; };
 		54C9FB6E24E3CC7C0057A03F /* ResultSegmentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9FB6D24E3CC7C0057A03F /* ResultSegmentBar.swift */; };
+		54E0C2CA24E3D754002F7615 /* SyphilisQuesHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0C2C924E3D754002F7615 /* SyphilisQuesHeadView.swift */; };
+		54E0C2CC24E3D78D002F7615 /* AidsQuesHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0C2CB24E3D78D002F7615 /* AidsQuesHeadView.swift */; };
 		54E8FFED24C28A9700D547EC /* MonthlyPointsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E8FFEC24C28A9700D547EC /* MonthlyPointsEntity.swift */; };
 		54F3FDBE24C403A3008FBEC2 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3FDBD24C403A3008FBEC2 /* Loading.swift */; };
 		54F3FDC624C41959008FBEC2 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3FDC524C41959008FBEC2 /* ArticleDetailViewController.swift */; };
@@ -239,9 +241,11 @@
 		54C97DFF24C05A2900E6B987 /* LMJVerticalScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJVerticalScrollText.m; sourceTree = "<group>"; };
 		54C97E0024C05A2900E6B987 /* UIView+ForLMJVerticalScrollText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ForLMJVerticalScrollText.h"; sourceTree = "<group>"; };
 		54C97E0124C05A2900E6B987 /* UILabel+ForLMJVerticalScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ForLMJVerticalScrollText.m"; sourceTree = "<group>"; };
-		54C9FB6924E3CC090057A03F /* AidsQuesResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidsQuesResultViewController.swift; sourceTree = "<group>"; };
-		54C9FB6B24E3CC4D0057A03F /* AidsQuesResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidsQuesResultView.swift; sourceTree = "<group>"; };
+		54C9FB6924E3CC090057A03F /* QuestionnaireResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireResultViewController.swift; sourceTree = "<group>"; };
+		54C9FB6B24E3CC4D0057A03F /* QuestionnaireResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireResultView.swift; sourceTree = "<group>"; };
 		54C9FB6D24E3CC7C0057A03F /* ResultSegmentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultSegmentBar.swift; sourceTree = "<group>"; };
+		54E0C2C924E3D754002F7615 /* SyphilisQuesHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyphilisQuesHeadView.swift; sourceTree = "<group>"; };
+		54E0C2CB24E3D78D002F7615 /* AidsQuesHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AidsQuesHeadView.swift; sourceTree = "<group>"; };
 		54E8FFEC24C28A9700D547EC /* MonthlyPointsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPointsEntity.swift; sourceTree = "<group>"; };
 		54F3FDBD24C403A3008FBEC2 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		54F3FDC524C41959008FBEC2 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
@@ -368,7 +372,7 @@
 				54BF0E1224BD8DFC00629874 /* Questionnaire */,
 				5459EA7224BF028D00A1D0FE /* CustomScrollView */,
 				545456FD24C04B2600F44769 /* PointsExchange */,
-				54C9FB6524E3CAB60057A03F /* AidsQuestionnaire */,
+				54C9FB6524E3CAB60057A03F /* QuestionnaireResult */,
 				54BF0E0424BD8DFB00629874 /* Extension */,
 				54BF0E0E24BD8DFB00629874 /* Tools */,
 				54BF0DDE24BD8D3300629874 /* Launch Screen.storyboard */,
@@ -779,20 +783,19 @@
 			path = LMJVerticalScrollText;
 			sourceTree = "<group>";
 		};
-		54C9FB6524E3CAB60057A03F /* AidsQuestionnaire */ = {
+		54C9FB6524E3CAB60057A03F /* QuestionnaireResult */ = {
 			isa = PBXGroup;
 			children = (
-				54C9FB6824E3CB990057A03F /* Model */,
 				54C9FB6724E3CB8E0057A03F /* View */,
 				54C9FB6624E3CB0C0057A03F /* Controller */,
 			);
-			path = AidsQuestionnaire;
+			path = QuestionnaireResult;
 			sourceTree = "<group>";
 		};
 		54C9FB6624E3CB0C0057A03F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				54C9FB6924E3CC090057A03F /* AidsQuesResultViewController.swift */,
+				54C9FB6924E3CC090057A03F /* QuestionnaireResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -800,17 +803,12 @@
 		54C9FB6724E3CB8E0057A03F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				54C9FB6B24E3CC4D0057A03F /* AidsQuesResultView.swift */,
+				54C9FB6B24E3CC4D0057A03F /* QuestionnaireResultView.swift */,
 				54C9FB6D24E3CC7C0057A03F /* ResultSegmentBar.swift */,
+				54E0C2C924E3D754002F7615 /* SyphilisQuesHeadView.swift */,
+				54E0C2CB24E3D78D002F7615 /* AidsQuesHeadView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		54C9FB6824E3CB990057A03F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		54F3FDC124C41924008FBEC2 /* ArticleDetail */ = {
@@ -1083,18 +1081,20 @@
 				54BF0E2A24BD8DFC00629874 /* FinalEvaluationQuesCell.swift in Sources */,
 				54A21A7724C2D08D003F97BE /* SegmentBar.swift in Sources */,
 				54BF0E2924BD8DFC00629874 /* FinalEvaluationView.swift in Sources */,
-				54C9FB6A24E3CC090057A03F /* AidsQuesResultViewController.swift in Sources */,
+				54C9FB6A24E3CC090057A03F /* QuestionnaireResultViewController.swift in Sources */,
 				549E8E1D24C1AA7B0071DFCD /* MagazineIssueSelectView.swift in Sources */,
 				54F3FDC624C41959008FBEC2 /* ArticleDetailViewController.swift in Sources */,
-				54C9FB6C24E3CC4D0057A03F /* AidsQuesResultView.swift in Sources */,
+				54C9FB6C24E3CC4D0057A03F /* QuestionnaireResultView.swift in Sources */,
 				54C12C4724C09D3800EC8C3F /* PointsRecordsTableHeaderView.swift in Sources */,
 				54BF0E3B24BD8DFC00629874 /* UIViewController+Extension.swift in Sources */,
 				5454570324C04BFB00F44769 /* PointRewardInfoTableCell.swift in Sources */,
 				54BF0E2024BD8DFC00629874 /* FinalEvaluationChoiceAnswerView.swift in Sources */,
 				54BF0E4324BD8DFC00629874 /* AnswerChooseView.swift in Sources */,
+				54E0C2CC24E3D78D002F7615 /* AidsQuesHeadView.swift in Sources */,
 				54BF0E2F24BD8DFC00629874 /* DoctorLeftView.swift in Sources */,
 				54E8FFED24C28A9700D547EC /* MonthlyPointsEntity.swift in Sources */,
 				54BF0E3324BD8DFC00629874 /* DoctorLeftHeaderView.swift in Sources */,
+				54E0C2CA24E3D754002F7615 /* SyphilisQuesHeadView.swift in Sources */,
 				54BF0E3C24BD8DFC00629874 /* String+Extension.swift in Sources */,
 				5491C11E24C152AC000A2812 /* ActivationCodeDetailsView.swift in Sources */,
 				549E8E0924C18FAC0071DFCD /* ExchangeInstructionsCell.swift in Sources */,
