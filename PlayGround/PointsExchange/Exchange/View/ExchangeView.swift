@@ -411,9 +411,11 @@ extension ExchangeView: MonthlyChooseProtocol {
 // MARK: - UIScrollViewDelegate
 extension ExchangeView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(self.scrollView.contentOffset.y)
         if scrollView.isKind(of: UITableView.self) {
             if self.scrollView.contentOffset.y == 0 {
                 let offsetY = scrollView.contentOffset.y
+                print(offsetY)
                 if offsetY > 0 {
                     let bottomOffset = CGPoint(x: 0, y: self.scrollView.contentSize.height - self.scrollView.bounds.size.height)
                     self.scrollView.setContentOffset(bottomOffset, animated: true)

@@ -30,8 +30,8 @@ class ExchangeViewController: UIViewController {
     }
     
     // MARK: Lazy Get
-    lazy var mainView: ExchangeViewStyle2 = {
-        let view = ExchangeViewStyle2()
+    lazy var mainView: ExchangeView = {
+        let view = ExchangeView()
         view.delegate = self
         return view
     }()

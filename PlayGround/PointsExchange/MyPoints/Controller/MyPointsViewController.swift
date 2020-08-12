@@ -22,6 +22,15 @@ class MyPointsViewController: UIViewController {
         setupNavi()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isTranslucent = false
+        // 1.设置导航栏标题属性：设置标题颜色
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+        // 2.设置导航栏前景色：设置item指示色
+        self.navigationController?.navigationBar.tintColor = .systemBlue
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
